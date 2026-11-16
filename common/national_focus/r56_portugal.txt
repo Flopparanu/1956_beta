@@ -58,13 +58,6 @@ focus_tree = {
 		}
 		available_if_capitulated = yes
 		completion_reward = {
-			add_tech_bonus = {
-				name = FRA_fortification_focus
-				bonus = 1
-				uses = 1
-				category = cat_fortification
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
 			698 = {
 				if = {
 					limit = {
@@ -4927,11 +4920,9 @@ focus_tree = {
 				custom_effect_tooltip = unlocks_decision_a_new_status_for_the_colonies_which_grants_tt
 				add_war_support = 0.03
 				if = {
-					limit = {
-						NOT = {
-							has_country_flag = POR_colonial_autonomy_flag
-						}
-					}
+					limit = { has_country_flag = POR_colonial_autonomy_flag }
+				}
+				else = {
 					add_popularity = {
 						ideology = ROOT
 						popularity = -0.1
@@ -5403,11 +5394,9 @@ focus_tree = {
 				effect_tooltip = {
 					custom_effect_tooltip = unlocks_decision_a_new_status_for_the_colonies_which_grants_tt
 					if = {
-						limit = {
-							NOT = {
-								has_country_flag = POR_colonial_autonomy_flag
-							}
-						}
+						limit = { has_country_flag = POR_colonial_autonomy_flag }
+					}
+					else = {
 						add_popularity = {
 							ideology = ROOT
 							popularity = -0.1
@@ -5951,6 +5940,7 @@ focus_tree = {
 							militia = { x = 1 y = 0 }
 							militia = { x = 1 y = 1 }
 						}
+						override_model = POR_militia_alt_2_entity
 					}
 					division_template = {
 						name = "Brigada de Infantaria"

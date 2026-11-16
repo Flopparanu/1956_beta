@@ -9729,7 +9729,7 @@ country_event = {
 				# desc = "POLITICS_JAVIER_I_DESC" # R56
 				picture = "GFX_portrait_SPA_xavier_of_bourbon_parma"
 				expire = "1965.1.1"
-				ideology = despotism
+				ideology = constitutional_monarchy
 				traits = {
 					the_sacred_king
 					r56_trait_opposed_to_communism # R56
@@ -10652,8 +10652,8 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		any_country_with_original_tag = {
-			original_tag_to_check = SPR
+		any_country = {
+			original_tag = SPR
 			OR = {
 				has_government = democratic
 				has_government = communism
@@ -11533,7 +11533,7 @@ country_event = {
 					# desc = "POLITICS_JAIME_IV_DESC" # R56
 					picture = "GFX_portrait_fra_infante_jaime"
 					expire = "1965.1.1"
-					ideology = despotism
+					ideology = constitutional_monarchy
 					traits = {
 						the_legitimist # R56
 						r56_trait_opposed_to_communism # R56

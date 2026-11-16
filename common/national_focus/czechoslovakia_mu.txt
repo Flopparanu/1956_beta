@@ -4767,12 +4767,14 @@ focus_tree = {
 				surname = "Šrom"
 				callsign = "Orel"		#made up based on coat of arms
 				type = fighter_unique
+				is_female = no
 			}
 			add_ace = {
 				name = "Václav"
 				surname = "Jícha"
 				callsign = "Lev"		#made up based on coat of arms
 				type = fighter_unique
+				is_female = no
 			}
 			if = {
 				limit = {
@@ -4783,6 +4785,7 @@ focus_tree = {
 					surname = "Peřina"
 					callsign = "François"
 					type = fighter_unique
+					is_female = no
 				}
 			}
 			else = {
@@ -4791,6 +4794,7 @@ focus_tree = {
 					surname = "Peřina"
 					callsign = "Medvěd"	#made up based on coat of arms
 					type = fighter_unique
+					is_female = no
 				}
 			}
 		}
@@ -10885,8 +10889,8 @@ focus_tree = {
 			
 		available = {
 			is_subject = no
-			any_country_with_original_tag = {
-				original_tag_to_check = SOV
+			any_country = {
+				original_tag = SOV
 				has_civil_war = yes
 				NOT = {
 					has_war_with = ROOT
@@ -10896,8 +10900,8 @@ focus_tree = {
 		}
 
 		bypass = {
-			any_country_with_original_tag = {
-				original_tag_to_check = SOV
+			any_country = {
+				original_tag = SOV
 				has_war_with = ROOT
 			}
 		}
@@ -14414,7 +14418,7 @@ focus_tree = {
 					}
 					if = {
 						limit = {
-							is_special_project_completed = sp:sp_air_helicopter
+							is_special_project_completed = sp_air_helicopter
 						}
 						mio:CZE_praga_aviation_organization = {
 							add_mio_size = 1
@@ -18242,13 +18246,6 @@ focus_tree = {
 				specialization = specialization_land
 				value = 0.25
 			}	
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_tech_bonus = {
-				name = FRA_fortification_focus
-				bonus = 1
-				uses = 1
-				category = cat_fortification
-			}
 		}
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL_CHARACTER }
 	}
@@ -18527,6 +18524,7 @@ focus_tree = {
 				surname = "Kuttelwascher"
 				callsign = "Kut"
 				type = fighter_unique
+				is_female = no
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt

@@ -2025,10 +2025,6 @@ focus_tree = {
 		relative_position_id = GER_autarky_efforts
 		cost = 5
 		available = {
-			OR = {
-				has_dynamic_modifier = { modifier = GER_mefo_bills_modifier }
-				has_dynamic_modifier = { modifier = GER_economy_of_conquest_modifier }
-			}
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
@@ -4614,13 +4610,11 @@ focus_tree = {
 					category = cat_armored_cars
 				}
 
-				#custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = generic_skip_one_line_tt
 
-				hidden_effect = {
-					set_technology = {
-						GER_heavy_armored_car = 1
-						popup = no
-					}
+				set_technology = {
+					GER_heavy_armored_car = 1
+					popup = yes
 				}
 				custom_effect_tooltip = GER_heavy_armored_car_recon_company_tt
 			}
@@ -4849,8 +4843,8 @@ focus_tree = {
 		completion_reward = {
 			GER_modify_army_modifier = yes
 			add_to_variable = { 
-				GER_military_supply_consumption_factor = -0.15
-				tooltip = supply_consumption_factor_tt
+				GER_military_supply_factor = 0.15
+				tooltip = supply_factor_tt
 			}
 			add_to_variable = { 
 				GER_military_army_fuel_consumption_factor = -0.1
@@ -7834,7 +7828,7 @@ focus_tree = {
 				GER_add_or_modify_wunderwaffen = yes
 				if = {
 					limit = {
-						NOT = { is_special_project_completed = sp:sp_air_intercontinental_bomber }
+						NOT = { is_special_project_completed = sp_air_intercontinental_bomber }
 					}
 					add_to_variable = { 
 						GER_wunderwaffen_sp_air_intercontinental_bomber_speed_factor = 0.2 #MM: This is the focus of this focus, so extra speed
@@ -7843,7 +7837,7 @@ focus_tree = {
 				}
 				if = {
 					limit = {
-						NOT = { is_special_project_completed = sp:sp_air_mothership_aircraft }
+						NOT = { is_special_project_completed = sp_air_mothership_aircraft }
 					}
 					add_to_variable = { 
 						GER_wunderwaffen_sp_air_mothership_aircraft_speed_factor = GER_wunderwaffe_research_speed_bonus
@@ -14469,7 +14463,6 @@ focus_tree = {
 			is_subject = no
 			has_full_control_of_state = 8
 			has_full_control_of_state = 28
-			has_full_control_of_state = 965
 			OR = {
 				owns_state = 28
 				FRA = { has_capitulated = yes }
@@ -14487,21 +14480,11 @@ focus_tree = {
 					exists = no
 				}
 			}
-			OR = {
-				owns_state = 965
-				BEL = { has_capitulated = yes }
-				BEL = { is_subject_of = ROOT }
-				all_country_with_original_tag = {
-					original_tag_to_check = BEL
-					exists = no
-				}
-			}
 		}
 
 		bypass = {
 			8 = { is_core_of = ROOT }
 			28 = { is_core_of = ROOT }
-			965 = { is_core_of = ROOT }
 		}
 
 		ai_will_do = {
@@ -14513,18 +14496,11 @@ focus_tree = {
 		completion_reward = {
 			add_state_core = 8
 			add_state_core = 28
-			add_state_core = 965
 			if = {
 				limit = {
 					NOT = { owns_state = 28 }
 				}
 				transfer_state = 28
-			}
-			if = {
-				limit = {
-					NOT = { owns_state = 965 }
-				}
-				transfer_state = 965
 			}
 			# Currently these names will now instead be dynamically renamed upon becoming owned by Germany
 			#28 = { set_state_name = "Elsass-Lothringen" }
@@ -14540,8 +14516,8 @@ focus_tree = {
 			}
 			else_if = {
 				limit = {
-					any_country_with_original_tag = {
-						original_tag_to_check = FRA
+					any_country = {
+						original_tag = FRA
 						exists = yes
 					}
 				}
@@ -14551,24 +14527,13 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					any_country_with_original_tag = {
-						original_tag_to_check = LUX
+					any_country = {
+						original_tag = LUX
 						exists = yes
 					}
 				}
 				LUX = {
 					country_event = { id = wtt_germany.64 }
-				}
-			}
-			if = {
-				limit = {
-					any_country_with_original_tag = {
-						original_tag_to_check = BEL
-						exists = yes
-					}
-				}
-				BEL = {
-					country_event = { id = wtt_germany.1007 }
 				}
 			}
 		}
@@ -27801,8 +27766,8 @@ focus_tree = {
 					is_guaranteed_by = SOV
 					has_guaranteed = SOV
 				}
-				any_country_with_original_tag = {
-					original_tag_to_check = SOV #in the event of cw weirdness
+				any_country = {
+					original_tag = SOV #in the event of cw weirdness
 					OR = {
 						exists = no
 						NOT = { has_government = communism }
@@ -34897,8 +34862,8 @@ focus_tree = {
 				FRA = { has_capitulated = yes }
 				FRA = { is_subject_of = GER }
 				NOT = {
-					any_country_with_original_tag = {
-						original_tag_to_check = FRA
+					any_country = {
+						original_tag = FRA
 						exists = yes
 					}
 				}
@@ -37712,8 +37677,8 @@ focus_tree = {
 			is_subject = no
 			has_war = no
 			NOT = {
-				any_country_with_original_tag = {
-					original_tag_to_check = GER
+				any_country = {
+					original_tag = GER
 					has_government = fascism
 				}
 			}
@@ -38951,8 +38916,8 @@ focus_tree = {
 				FRA = { has_capitulated = yes }
 				FRA = { is_subject_of = GER }
 				NOT = {
-					any_country_with_original_tag = {
-						original_tag_to_check = FRA
+					any_country = {
+						original_tag = FRA
 						exists = yes
 					}
 				}
@@ -40023,20 +39988,20 @@ focus_tree = {
 		available = {
 			is_subject = no
 			OR = {
-				any_country_with_original_tag = {
-					original_tag_to_check = HUN
+				any_country = { 
+					original_tag = HUN
 					has_government = communism 
 				}
-				any_country_with_original_tag = {
-					original_tag_to_check = ROM
+				any_country = { 
+					original_tag = ROM
 					has_government = communism 
 				}
-				any_country_with_original_tag = {
-					original_tag_to_check = YUG
+				any_country = { 
+					original_tag = YUG
 					has_government = communism 
 				}
-				any_country_with_original_tag = {
-					original_tag_to_check = BUL
+				any_country = { 
+					original_tag = BUL
 					has_government = communism 
 				}
 			}
@@ -40053,8 +40018,8 @@ focus_tree = {
 			custom_effect_tooltip = GER_no_balkan_communism_tt
 			if = {
 				limit = {
-					any_country_with_original_tag = {
-						original_tag_to_check = HUN
+					any_country = { 
+						original_tag = HUN
 						has_government = communism 
 					}
 				}
@@ -40077,8 +40042,8 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					any_country_with_original_tag = {
-						original_tag_to_check = ROM
+					any_country = { 
+						original_tag = ROM
 						has_government = communism 
 					}
 				}
@@ -40101,8 +40066,8 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					any_country_with_original_tag = {
-						original_tag_to_check = YUG
+					any_country = { 
+						original_tag = YUG
 						has_government = communism 
 					}
 				}
@@ -40125,8 +40090,8 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					any_country_with_original_tag = {
-						original_tag_to_check = BUL
+					any_country = { 
+						original_tag = BUL
 						has_government = communism 
 					}
 				}
@@ -40241,20 +40206,20 @@ focus_tree = {
 		available = {
 			is_subject = no
 			OR = {
-				any_country_with_original_tag = {
-					original_tag_to_check = FRA
+				any_country = { 
+					original_tag = FRA
 					has_government = communism 
 				}
-				any_country_with_original_tag = {
-					original_tag_to_check = HOL
+				any_country = { 
+					original_tag = HOL
 					has_government = communism 
 				}
-				any_country_with_original_tag = {
-					original_tag_to_check = BEL
+				any_country = { 
+					original_tag = BEL
 					has_government = communism 
 				}
-				any_country_with_original_tag = {
-					original_tag_to_check = LUX
+				any_country = { 
+					original_tag = LUX
 					has_government = communism 
 				}
 			}
@@ -40275,8 +40240,8 @@ focus_tree = {
 			custom_effect_tooltip = GER_no_reds_in_western_europe_tt
 			if = {
 				limit = {
-					any_country_with_original_tag = {
-						original_tag_to_check = FRA
+					any_country = { 
+						original_tag = FRA
 						has_government = communism 
 					}
 				}
@@ -40299,8 +40264,8 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					any_country_with_original_tag = {
-						original_tag_to_check = HOL
+					any_country = { 
+						original_tag = HOL
 						has_government = communism 
 					}
 				}
@@ -40323,8 +40288,8 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					any_country_with_original_tag = {
-						original_tag_to_check = BEL
+					any_country = { 
+						original_tag = BEL
 						has_government = communism 
 					}
 				}
@@ -40347,8 +40312,8 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					any_country_with_original_tag = {
-						original_tag_to_check = LUX
+					any_country = { 
+						original_tag = LUX
 						has_government = communism 
 					}
 				}
@@ -42583,9 +42548,7 @@ focus_tree = {
 		available = {
 			has_civil_war = yes
 		}
-		bypass_effect = {
-			set_country_flag = GER_rally_the_nation_tree_flag
-		}
+
 		bypass = {
 			NOT = {
 					has_government = fascism
@@ -43153,14 +43116,6 @@ focus_tree = {
 		ai_will_do = {
 		}
 		completion_reward = {
-			hidden_effect = {
-				
-				set_party_name = {
-					ideology = fascism
-					long_name = GER_nraf_long
-					name = GER_nraf_party_name
-				}
-			}
 			IF = {
 				limit = { has_country_flag = GER_secure_freikorps_remnants_flag}
 				country_event = new_ger.111
@@ -44488,11 +44443,6 @@ focus_tree = {
 				has_completed_focus = GER_dnvp_in_coalition
 				tooltip = GER_dnvp_gov_tt
 			} }
-			NOT = { 
-			custom_trigger_tooltip = {
-				has_completed_focus = GER_dvu_in_coalition
-				tooltip = GER_dvu_gov_tt
-			} }
 			
 			custom_trigger_tooltip = {
 				tooltip = GER_nraf_gov_tt
@@ -44574,10 +44524,7 @@ focus_tree = {
 		}
 
 		available = {
-			OR = {
-				has_completed_focus = GER_support_the_workers
-				has_completed_focus = GER_a_planned_economy
-			}
+			has_completed_focus = GER_socialism_with_german_characteristics
 			
 			custom_trigger_tooltip = {
 				tooltip = GER_nraf_gov_tt
@@ -45129,9 +45076,6 @@ focus_tree = {
 			}
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = GER_theodor_duesterberg
-			hidden_effect = {
-				remove_country_leader_trait = desperate_gambit
-			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER}
 
@@ -45622,6 +45566,18 @@ focus_tree = {
 				OR = {
 					has_completed_focus = GER_hugenburgs_legacy
 					has_completed_focus = GER_goerdelers_new_party
+				}
+			}
+		}
+		offset = {
+			x = 2
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				OR = {
+					has_completed_focus = GER_demokratieschutzgesetz
 				}
 			}
 		}
@@ -46820,9 +46776,6 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = GER_max_buchner
-			hidden_effect = {
-				remove_country_leader_trait = desperate_gambit
-			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER}
 	}
@@ -47028,11 +46981,6 @@ focus_tree = {
 				uncomplete_children = yes
 				refund_political_power = no
 			}
-			set_country_flag = {
-				flag = GER_mad_zentrum
-				value = 1
-				days = 250
-			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL}
 
@@ -47131,10 +47079,7 @@ focus_tree = {
 		}
 
 		available = {
-			OR = {
-				has_completed_focus = GER_intertwine_the_state_and_the_church
-				has_completed_focus = GER_upkeep_german_order
-			}
+			has_completed_focus = GER_intertwine_the_state_and_the_church
 			has_completed_focus = GER_goerdelers_new_party
 			OR = {
 				has_country_leader = {
@@ -47357,7 +47302,11 @@ focus_tree = {
 			}
 			IF = {
 				limit = {
-					has_country_flag = GER_dvu_formed
+					
+			custom_trigger_tooltip = {
+				has_completed_focus = GER_dvu_in_coalition
+				tooltip = GER_dvu_gov_tt
+			}
 				}
 				add_to_variable = { DVU_seats = -5 }
 				custom_effect_tooltip = GER_DVU_-5_tt
@@ -47729,6 +47678,19 @@ focus_tree = {
 			x = 3
 		}
 		offset = {
+			x = 2
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				OR = {
+					has_completed_focus = GER_demokratieschutzgesetz
+					has_completed_focus = GER_found_the_new_german_state
+				}
+			}
+		}
+		offset = {
 			trigger = {	
 				has_country_flag = GER_dvu_formed
 			}
@@ -47788,24 +47750,8 @@ focus_tree = {
 				NOT = { 
 					has_country_flag = GER_comintern_kpd_funding_flag
 				}
-				AND = {
-					custom_trigger_tooltip = {
-						tooltip = GER_nraf_gov_tt
-						has_completed_focus = GER_nraf_in_coalition
-					}
-					NOT = {
-						custom_trigger_tooltip = {
-							tooltip = GER_kpd_gov_tt
-							has_completed_focus = GER_kpd_in_coalition
-						}
-					}
-
-				}
 				has_completed_focus = GER_fight_the_apo
 			}
-		}
-		bypass = {
-			has_country_flag = GER_spd_banned
 		}
 		ai_will_do = {
 		}
@@ -47880,13 +47826,6 @@ focus_tree = {
 			}
 			NOT = { has_idea = GER_wilhelm_iv }
 			NOT = { has_idea = GER_prov_gov_idea}
-			IF = {
-				limit = { has_idea = GER_president_beck }
-				has_idea = GER_president_beck
-			}
-			else = {
-				has_idea = GER_president_beck_2
-			}
 		}
 		ai_will_do = {
 		}
@@ -47901,7 +47840,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			IF = {
-				limit = { has_idea = GER_president_beck }
+				limit = { NOT = { has_idea = GER_president_beck}}
 				swap_ideas = {
 					remove_idea = GER_president_beck
 					add_idea = GER_wilhelm_iv
@@ -47911,7 +47850,7 @@ focus_tree = {
 				limit = { has_idea = GER_president_beck_2 }
 				swap_ideas = {
 					remove_idea = GER_president_beck_2
-					add_idea = GER_wilhelm_iv_weak
+					add_idea = GER_wilhelm_iv
 				}
 			}
 			set_cosmetic_tag = GER_emp
@@ -47967,8 +47906,7 @@ focus_tree = {
 					character = GER_carl_friedrich_goerdeler
 					ruling_only = yes
 				}
-			}
-			has_idea = GER_wilhelm_iv
+			}	
 		}
 		ai_will_do = {
 		}
@@ -48026,7 +47964,6 @@ focus_tree = {
 		}
 
 		available = {
-			NOT = { has_completed_focus = GER_weaken_the_presidents_power }
 			OR = {
 				has_country_leader = {
 					character = GER_alfred_hugenberg
@@ -48037,7 +47974,6 @@ focus_tree = {
 					ruling_only = yes
 				}
 			}	
-			has_idea = GER_wilhelm_iv
 		}
 		ai_will_do = {
 		}
@@ -48954,16 +48890,6 @@ focus_tree = {
 				ruling_only = yes
 			}
 			has_country_flag = GER_reichskonkordat_repealed
-			OR = {
-				custom_trigger_tooltip = {
-					has_completed_focus = GER_zentrum_in_coalition
-					tooltip = GER_zentrum_gov_tt
-				}
-				custom_trigger_tooltip = {
-					has_completed_focus = GER_dvu_in_coalition
-					tooltip = GER_dvu_gov_tt
-				}
-			}
 		}
 		ai_will_do = {
 		}
@@ -49013,15 +48939,10 @@ focus_tree = {
 				character = GER_adam_stegerwald
 				ruling_only = yes
 			}
-			OR = {
-				custom_trigger_tooltip = {
-					has_completed_focus = GER_zentrum_in_coalition
-					tooltip = GER_zentrum_gov_tt
-				}
-				custom_trigger_tooltip = {
-					has_completed_focus = GER_dvu_in_coalition
-					tooltip = GER_dvu_gov_tt
-				}
+			
+			custom_trigger_tooltip = {
+				has_completed_focus = GER_zentrum_in_coalition
+				tooltip = GER_zentrum_gov_tt
 			}
 		}
 		ai_will_do = {
@@ -49370,13 +49291,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = GER_christian_democracy
-			IF = {
-				limit = {
-					has_country_flag = GER_dvu_formed
-				}
-				add_to_variable = { DVU_stability = -0.1 }
-				custom_effect_tooltip = GER_DVU_stab_-0.1_tt
-			}
 			r56_ger_dvu_70 = yes
 			IF = {
 				limit = {
@@ -49627,22 +49541,6 @@ focus_tree = {
 			}
 			}
 		}
-		bypass = {
-			OR = {
-				
-			custom_trigger_tooltip = {
-				has_completed_focus = GER_dvu_in_coalition
-				tooltip = GER_dvu_gov_tt
-			}
-				
-			custom_trigger_tooltip = {
-				has_completed_focus = GER_zentrum_in_coalition
-				tooltip = GER_zentrum_gov_tt
-			}
-			}
-			NOT = { has_idea = GER_fractured_zentrum}
-
-		}
 		ai_will_do = {
 		}
 		completion_reward = {
@@ -49678,7 +49576,6 @@ focus_tree = {
 			has_completed_focus = GER_consolidate_elite_support
 		}
 		available = {
-			NOT = { has_idea = GER_conflict_with_the_elites }
 			OR = {
 				
 			custom_trigger_tooltip = {
@@ -49698,7 +49595,7 @@ focus_tree = {
 			IF = {
 				limit = { has_country_flag = GER_dvu_formed}
 				add_to_variable = { DVU_seats = 5 }
-				custom_effect_tooltip = GER_DVU_5_tt
+				custom_effect_tooltip = GER_dvu_5_tt
 			}
 			else = {
 				add_to_variable = { Zentrum_seats = 5 }
@@ -49737,13 +49634,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_country_leader_trait = GER_keeper_of_the_german_order
-			IF = {
-				limit = {
-					has_country_flag = GER_dvu_formed
-				}
-				add_to_variable = { DVU_bop = 0.25 }
-				custom_effect_tooltip = GER_DVU_bop_0.25_tt
-			}
 			r56_ger_zentrum_50 = yes
 			r56_ger_dvu_50 = yes
 		}
@@ -49780,20 +49670,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = GER_new_federalism
-			IF = {
-				limit = {
-					has_country_flag = GER_dvu_formed
-				}
-				add_to_variable = { DVU_bop = 0.25 }
-				custom_effect_tooltip = GER_DVU_bop_0.25_tt
-			}
-			IF = {
-				limit = {
-					has_country_flag = GER_dvu_formed
-				}
-				add_to_variable = { DVU_stability = -0.1 }
-				custom_effect_tooltip = GER_DVU_stab_-0.1_tt
-			}
 			r56_ger_dvu_70 = yes
 			IF = {
 				limit = {
@@ -49891,13 +49767,6 @@ focus_tree = {
 			custom_effect_tooltip = GER_KPD_-10_tt
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = GER_hedge_against_radicalism
-			IF = {
-				limit = {
-					has_country_flag = GER_dvu_formed
-				}
-				add_to_variable = { DVU_stability = -0.1 }
-				custom_effect_tooltip = GER_DVU_stab_-0.1_tt
-			}
 			r56_ger_dvu_50 = yes
 			IF = {
 				limit = {
@@ -49982,7 +49851,7 @@ focus_tree = {
 			IF = {
 				limit = { has_country_flag = GER_dvu_formed}
 				add_to_variable = { DVU_seats = -5 }
-				custom_effect_tooltip = GER_DVU_-5_tt
+				custom_effect_tooltip = GER_dvu_-5_tt
 			}
 			else = {
 				add_to_variable = { Zentrum_seats = -5 }
@@ -49997,20 +49866,6 @@ focus_tree = {
 					}
 				}
 				add_dynamic_modifier = { modifier = GER_prioritized_rheinland }
-			}
-			IF = {
-				limit = {
-					has_country_flag = GER_dvu_formed
-				}
-				add_to_variable = { DVU_bop = 0.25 }
-				custom_effect_tooltip = GER_DVU_bop_0.25_tt
-			}
-			IF = {
-				limit = {
-					has_country_flag = GER_dvu_formed
-				}
-				add_to_variable = { DVU_stability = -0.1 }
-				custom_effect_tooltip = GER_DVU_stab_-0.1_tt
 			}
 			r56_ger_dvu_20 = yes
 			IF = {
@@ -51358,7 +51213,6 @@ focus_tree = {
 						is_in_faction = no
 						is_subject = no
 						has_civil_war = no
-						NOT = { has_completed_focus = SPR_regional_defense_council_of_aragon }
 						IF = {
 							limit = { has_government = communism}
 							ROOT = { 
@@ -52355,8 +52209,6 @@ focus_tree = {
 				has_government = fascism
 				has_elections = no
 			}
-			NOT = { has_government = communism }
-			NOT = { has_completed_focus = GER_spd_in_coalition }
 		}
 		completion_reward = {
 			custom_effect_tooltip = GER_move_to_restore_brest_litovsk_tt
@@ -55775,7 +55627,7 @@ focus_tree = {
 				tooltip = equipment_conversion_speed_tt
 			}
 			add_to_variable = { 
-				GER_industrial_production_speed_arms_factory_factor = 0.075
+				GER_industrial_production_speed_arms_factory_factor = 0.05
 				tooltip = production_speed_arms_factory_factor_tt
 			}
 		#	IF = {
@@ -56880,7 +56732,7 @@ focus_tree = {
 			trigger = { 
 				has_completed_focus = GER_shake_off_the_fascist_yoke
 			}
-			x = 22
+			x = 23
 		}
 		offset = {
 			x = -8
@@ -57279,7 +57131,7 @@ focus_tree = {
 			}
 			add_to_variable = { 
 				GER_industrial_industrial_capacity_dockyard = 0.05
-				tooltip = industrial_capacity_dockyard_tt
+				tooltip = industrial_capacity_factory_tt
 			}
 			#random_core_state = {
 			#	limit = {
@@ -57745,7 +57597,7 @@ focus_tree = {
 		}
 		available = {
 			NOT = { 
-				has_completed_focus = GER_expand_the_kaisers_duties
+				
 			custom_trigger_tooltip = {
 				has_completed_focus = GER_dnvp_in_coalition
 				tooltip = GER_dnvp_gov_tt
@@ -57778,35 +57630,14 @@ focus_tree = {
 					has_country_flag = GER_adenauer_leadership
 				}
 			}
-			OR = {
-				has_idea = GER_president_beck
-				has_idea = GER_wilhelm_iv
-			}
-			IF = {
-				limit = {
-					has_idea = GER_wilhelm_iv
-				}
-				has_completed_focus = GER_demokratieschutzgesetz
-				has_completed_focus = GER_ban_internal_operations
-			}
+			has_idea = GER_president_beck
 		}
 		ai_will_do = {
 		}
 		completion_reward = {
-			IF = {
-				limit = {
-					has_idea = GER_wilhelm_iv
-				}
-				swap_ideas = {
-					remove_idea = GER_wilhelm_iv
-					add_idea = GER_wilhelm_iv_weak
-				}
-			}
-			else = {
-				swap_ideas = {
-					remove_idea = GER_president_beck
-					add_idea = GER_president_beck_2
-				}
+			swap_ideas = {
+				remove_idea = GER_president_beck
+				add_idea = GER_president_beck_2
 			}
 			set_country_flag = {
 				flag = GER_president_weakened
@@ -59435,7 +59266,7 @@ focus_tree = {
 			trigger = { 
 				has_completed_focus = GER_shake_off_the_fascist_yoke
 			}
-			x = 13
+			x = 14
 		}
 		relative_position_id = GER_kpd_in_coalition
 
@@ -59732,12 +59563,10 @@ focus_tree = {
 				has_completed_focus = GER_dvu_in_coalition
 			}
 			has_completed_focus = GER_expand_black_front_influence
-			NOT = { has_completed_focus = GER_demokratieschutzgesetz}
-			NOT = {
-				custom_trigger_tooltip = {
-					has_completed_focus = GER_kpd_in_coalition
-					tooltip = GER_kpd_gov_tt
-				}
+			
+			custom_trigger_tooltip = {
+				has_completed_focus = GER_kpd_in_coalition
+				tooltip = GER_kpd_gov_tt
 			}
 		}
 		ai_will_do = {
@@ -60198,13 +60027,11 @@ focus_tree = {
 				}
 			}
 			else = {
-				OR = {
-					NOT = { has_completed_focus = GER_shake_off_the_fascist_yoke }
-					NOT = {
-						has_country_leader = {
-							character = GER_ernst_thalmann
-							ruling_only = yes
-						}
+				NOT = {
+					has_completed_focus = GER_shake_off_the_fascist_yoke
+					has_country_leader = {
+						character = GER_ernst_thalmann
+						ruling_only = yes
 					}
 				}
 			}
@@ -60411,7 +60238,7 @@ focus_tree = {
 			trigger = { 
 				has_completed_focus = GER_shake_off_the_fascist_yoke
 			}
-			x = 13
+			x = 14
 		}
 		relative_position_id = GER_kpd_in_coalition
 
@@ -60795,7 +60622,7 @@ focus_tree = {
 			trigger = { 
 				has_completed_focus = GER_shake_off_the_fascist_yoke
 			}
-			x = 13
+			x = 14
 		}
 		relative_position_id = GER_kpd_in_coalition
 
@@ -60960,7 +60787,7 @@ focus_tree = {
 			trigger = { 
 				has_completed_focus = GER_shake_off_the_fascist_yoke
 			}
-			x = 13
+			x = 14
 		}
 		relative_position_id = GER_kpd_in_coalition
 
@@ -61422,14 +61249,6 @@ focus_tree = {
 		ai_will_do = {
 		}
 		completion_reward = {
-			hidden_effect = {
-				
-				remove_trait = {
-					character = GER_carl_friedrich_goerdeler
-					ideology = military_junta
-					trait = desperate_gambit
-				}
-			}
 			IF = {
 				limit = { has_country_flag = GER_secure_freikorps_remnants_flag}
 				country_event = new_ger.111
@@ -61562,7 +61381,7 @@ focus_tree = {
 				limit = {
 					power_balance_value = {
 						id = GER_beck_canaris_struggle
-						value < -0.89
+						value > -0.89
 					}
 				}
 				add_ideas = GER_abwehr_power_4
@@ -61571,7 +61390,7 @@ focus_tree = {
 				limit = {
 					power_balance_value = {
 						id = GER_beck_canaris_struggle
-						value < -0.59
+						value > -0.59
 					}
 				}
 				add_ideas = GER_abwehr_power_3
@@ -61580,7 +61399,7 @@ focus_tree = {
 				limit = {
 					power_balance_value = {
 						id = GER_beck_canaris_struggle
-						value < -0.29
+						value > -0.29
 					}
 				}
 				add_ideas = GER_abwehr_power_2
@@ -62146,10 +61965,6 @@ focus_tree = {
 				remove_idea = GER_democratic_resistance
 				add_idea = GER_democratic_resistance_2
 			}
-			swap_ideas = {
-				remove_idea = GER_lack_of_civilian_government_2
-				add_idea = GER_lack_of_civilian_government_3
-			}
 			mark_focus_tree_layout_dirty = yes
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = GER_carl_friedrich_goerdeler
@@ -62589,7 +62404,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = unlock_GER_force_beck_ino_retirement_which_grants
 			effect_tooltip = {
-				remove_ideas = GER_becks_lingering_opposition_2
+				remove_ideas = GER_democratic_opposition_2
 				retire_character = GER_ludwig_beck
 			}
 		}
@@ -70525,8 +70340,8 @@ focus_tree = {
 			is_faction_leader = yes
 			custom_trigger_tooltip = {
 				tooltip = intervene_soviet_civil_war_tt		
-				any_country_with_original_tag = {
-					original_tag_to_check = SOV
+				any_country = {
+					original_tag = SOV
 					NOT = {
 						tag = SOV
 					}

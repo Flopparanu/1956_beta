@@ -14,7 +14,7 @@ focus_tree = {
 	default = no
 	reset_on_civilwar = no
 
-	shared_focus = CENAM_armies_of_the_isthmus
+	shared_focus = ABC_establish_a_general_staff
 	shared_focus = GEN_Aviation_Effort
 	shared_focus = GEN_Naval_Effort
 	shared_focus = GEN_begin_industrial_buildup
@@ -37,7 +37,7 @@ focus_tree = {
 		}
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 65
+		x = 58
 		y = 0
 		ai_will_do = {
 			factor = 11
@@ -1046,7 +1046,7 @@ focus_tree = {
 
 	focus = {
 		id = COS_central_american_cooperation
-		icon = GFX_goal_ELS_central_america
+		icon = GFX_goal_MEX_march_southwards
 		prerequisite = {
 			focus = COS_carry_the_torch
 		}

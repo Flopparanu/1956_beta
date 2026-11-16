@@ -14,6 +14,46 @@ on_actions = {
 				clr_country_flag = CHI_new_cuf_flag_to_be_sure_its_not_already_taken_lol
 			}
 		}
+		effect = {
+			IF = {
+				limit = {
+					all_country = {
+						OR = {
+							NOT = { 
+								has_country_flag = CHI_new_cuf_flag_to_be_sure_its_not_already_taken_lol
+							}
+							has_war_with_major = no
+						}
+					}
+				}
+				IF = {
+					limit = {
+						has_country_flag = CHI_new_cuf_flag_to_be_sure_its_not_already_taken_lol
+						NOT = {
+							is_faction_leader = yes
+							tag = CUG
+						}
+					}
+					country_event = {
+						id = CHI_warlords.42
+						days = 3
+					}
+				}
+				IF = {
+					limit = {
+						has_country_flag = CHI_new_cuf_flag_to_be_sure_its_not_already_taken_lol
+						OR = {
+							is_faction_leader = yes
+							tag = CUG
+						}
+					}
+					country_event = {
+						id = CHI_warlords.42
+						days = 24
+					}
+				}
+			}
+		}
 	}
 	on_state_control_changed = {
 		effect = {
@@ -135,18 +175,22 @@ on_actions = {
 					NOT = { 
 						CUG = { has_country_flag = CUF_fired }
 					}
-					CUG = {
-						OR = {
-							is_in_faction = no
-							is_faction_leader = yes
-							has_faction_template = faction_template_chinese_united_front
-						}
-					}
-					any_country_with_original_tag_of = {
-						target = constant:country_groups.chinese_nations
-						NOT = {
-							tag = CUG
-							original_tag = MEN
+					any_country = {
+						NOT = { tag = CUG }
+						OR =  {
+							original_tag = MAN
+							original_tag = GXC
+							original_tag = SHX
+							original_tag = SIC
+							original_tag = XIC
+							original_tag = GDC
+							original_tag = HBC
+							original_tag = SND
+							original_tag = XSM
+							original_tag = YUN
+							original_tag = SIK
+							original_tag = KHM
+							original_tag = PRC
 						}
 						NOT = {
 							has_completed_focus = CHI_seek_japanese_support
@@ -189,7 +233,12 @@ on_actions = {
 			IF = {
 				limit = { has_completed_focus = KMT_the_great_flight }
 				set_variable = { KMT_wt_d = CHI.party_popularity_100@communism }
-				add_to_variable = { KMT_wt_d = CHI.party_popularity_100@democratic }
+				IF = {
+					limit = {
+						NOT = { has_completed_focus = KMT_display_chaings_crimes }
+					}
+					add_to_variable = { KMT_wt_d = CHI.party_popularity_100@democratic }
+				}
 				divide_variable = {
 					var = KMT_wt_d
 					value = -100
@@ -287,18 +336,6 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_GXC = {
-		effect = {
-			every_country = {
-				limit = { has_idea = GXC_the_indochinese_route_2 }
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 500
-					producer = FRA
-				}
-			}
-		}
-	}
 	on_monthly_CHI = {
 		effect = {
 			set_variable = { KMT_eco_cons_visual = KMT_eco_cons }
@@ -357,10 +394,6 @@ on_actions = {
 				var = KMT_eco_cons
 				value = KMT_consumers_temp
 			}
-			clamp_variable = {
-				var = KMT_eco_cons
-				min = 0
-			}
 		}
 		effect = {
 			add_to_variable = {
@@ -397,6 +430,16 @@ on_actions = {
 			}
 			IF = {
 				limit = {
+					is_faction_leader = yes
+					has_completed_focus = KMT_restore_the_tributary_system
+					has_government = fascism
+				}
+				every_allied_country = {
+					add_ideas = KMT_chinese_tributary
+				}
+			}
+			IF = {
+				limit = {
 					original_tag = CHI
 					has_completed_focus = KMT_en_masse_conscription
 					check_variable = {
@@ -414,6 +457,40 @@ on_actions = {
 					value = 0.03
 					tooltip = conscription_factor_tt
 				}
+			}
+			IF = {
+				limit = {
+					has_completed_focus = KMT_lift_the_veil
+					NOT = { has_country_flag = KMT_wt_stab_fixed }
+					check_variable = { var = KMT_wt_stab value = 0 compare = less_than_or_equals }
+				}
+				add_to_variable = { KMT_wt_stab = 0.015 }
+			}
+			IF = {
+				limit = {
+					has_completed_focus = KMT_lift_the_veil
+					check_variable = { var = KMT_wt_stab value = 0 compare = greater_than_or_equals }
+				}
+				set_variable = { KMT_wt_stab = 0 }
+				set_country_flag = KMT_wt_stab_fixed
+			}
+			IF = {
+				limit = {
+					has_completed_focus = KMT_disband_the_blueshirts
+					NOT = { has_completed_focus = KMT_create_the_cbis }
+					fascism > 0.25
+					has_government = neutrality
+					NOT = { has_country_flag = KMT_fac_fail }
+					NOT = { has_war_with_major = yes }
+					NOT = {
+						has_completed_focus = KMT_wang_jingweis_rise
+						has_completed_focus = KMT_the_national_catastrophe
+						has_completed_focus = KMT_purge_the_liberal_democrats
+						has_completed_focus = KMT_the_nth_national_congress
+						has_completed_focus = KMT_hold_new_elections
+					}
+				}
+				country_event = KMT_event.43
 			}
 		}
 	}

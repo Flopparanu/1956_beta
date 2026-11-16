@@ -6113,7 +6113,7 @@ focus = {
 				desc = "POLITICS_ANDREY_VLASOV_DESC"
 				picture = "Portrait_Soviet_Andrey_Vlasov.dds"
 				expire = "1965.1.1"
-				ideology = moderatism
+				ideology = conservatism_n
 				traits = {
 					resilient_nationalist
 				}
@@ -9950,6 +9950,7 @@ focus = {
 					traits = {  }
 					bypass_recruitment = no
 					available_to_spy_master = yes
+					female = yes
 					nationalities = { SOV AST }
 				}					
 			}
@@ -11291,8 +11292,13 @@ focus = {
 		prerequisite = { focus = SOV_claim_bessarabia focus = SOV_invite_romania_old }
 		available = {
 			is_puppet = no
-			any_country_of = {
-				target = { ENG FRA GER ITA }
+			any_country = {
+				OR = {
+					tag = ENG
+					tag = FRA
+					tag = GER
+					tag = ITA
+				}
 				has_government = fascism
 				is_major = yes
 			}
@@ -11370,8 +11376,13 @@ focus = {
 		}
 		bypass = {
 			NOT = {
-				any_country_of = {
-					target = { ENG FRA GER ITA }
+				any_country = {
+					OR = {
+						tag = ENG
+						tag = FRA
+						tag = GER
+						tag = ITA
+					}
 					has_government = fascism
 					is_major = yes
 				}		
@@ -11515,6 +11526,7 @@ focus = {
 	# 				traits = {  }
 	# 				bypass_recruitment = no
 	# 				available_to_spy_master = yes
+	# 				female = yes
 	# 				nationalities = { SOV AST }
 	# 			}					
 	# 		}
@@ -13730,11 +13742,12 @@ focus = {
 		icon = GFX_goal_generic_forceful_treaty
 		prerequisite = { focus = SOV_stalin_constitution }
 		available = {
-				any_enemy_country = {
+				any_country = {
 					OR = {
 						is_major = yes
 						num_of_factories > 60
 						}
+					has_war_with = ROOT
 					}
 			    }
 		bypass = {
@@ -13918,7 +13931,7 @@ focus = {
 				desc = "POLITICS_BERIA_DESC"
 				picture = "gfx/leaders/SOV/r56_portrait_SOV_Lavrenti_Beria.dds"
 				expire = "1965.1.1"
-				ideology = marxism
+				ideology = stalinism
 				traits = {
 					prince_of_terror
 				}

@@ -5837,7 +5837,7 @@ focus_tree = {
 					character = JAP_emperor_yasuhito
 					promote_leader = yes
 					country_leader = {
-						ideology = despotism
+						ideology = absolute_monarchism
 						expire = "1952.1.1.1"
 						traits = { sessho_trait }
 					}
@@ -5865,7 +5865,7 @@ focus_tree = {
 					character = JAP_emperor_yasuhito
 					promote_leader = yes
 					country_leader = {
-						ideology = despotism
+						ideology = absolute_monarchism
 						expire = "1952.1.1.1"
 						traits = { emperor_genka }
 					}
@@ -5887,7 +5887,7 @@ focus_tree = {
 					character = JAP_emperor_hirohito
 					promote_leader = yes
 					country_leader = {
-						ideology = despotism
+						ideology = absolute_monarchism
 						expire = "1952.1.1.1"
 						traits = { emperor_showa_2 } 
 					}
@@ -8600,13 +8600,13 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-			any_country_with_original_tag = {
-				original_tag_to_check = GER
+			any_country = {
+				original_tag = GER
 				has_government = fascism
 				NOT = { has_war_with = ROOT }
 			}
-			any_country_with_original_tag = {
-				original_tag_to_check = ITA
+			any_country = {
+				original_tag = ITA
 				has_government = fascism
 				NOT = { has_war_with = ROOT }
 			}
@@ -8618,24 +8618,24 @@ focus_tree = {
 					tooltip = JAP_sign_tripartite_pact_bypass_tt
 					OR = {
 						NOT = {
-							any_country_with_original_tag = {
-								original_tag_to_check = GER
+							any_country = {
+								original_tag = GER
 								has_government = fascism
 							}
 						}
-						any_country_with_original_tag = {
-							original_tag_to_check = GER
+						any_country = {
+							original_tag = GER
 							has_government = fascism
 							has_war_with = ROOT
 						}
 						NOT = {
-							any_country_with_original_tag = {
-								original_tag_to_check = ITA
+							any_country = {
+								original_tag = ITA
 								has_government = fascism
 							}
 						}
-						any_country_with_original_tag = {
-							original_tag_to_check = ITA
+						any_country = {
+							original_tag = ITA
 							has_government = fascism
 							has_war_with = ROOT
 						}	
@@ -9984,7 +9984,7 @@ focus_tree = {
 					character = JAP_emperor_hirohito
 					promote_leader = yes
 					country_leader = {
-						ideology = despotism
+						ideology = absolute_monarchism
 						expire = "1952.1.1.1"
 						traits = { emperor_showa_2 } 
 					}
@@ -10714,28 +10714,6 @@ focus_tree = {
 			is_subject = no
 			has_government = fascism
 			has_war = yes
-			collection_size = { #R56
-				input = {
-					input = game:all_states
-					operators = {
-						limit = {
-							OR = {
-								state = 645 #Iwo Jima
-								state = 526 #Okinawa
-								state = 524 #Taiwan
-								state = 555 #Kuril
-								state = 646 #Saipan
-							}
-							is_owned_by = JAP
-							NOT = {
-								is_controlled_by = JAP
-							}
-						}
-					}
-					name = COLLECTION_FALLEN_RING_ISLAND_STATES_2
-				}
-				value > 1
-			}
 		}
 
 		bypass = {
@@ -10794,28 +10772,6 @@ focus_tree = {
 			is_subject = no
 			has_government = fascism
 			has_war = yes
-			collection_size = { #R56
-				input = {
-					input = game:all_states
-					operators = {
-						limit = {
-							OR = {
-								state = 645 #Iwo Jima
-								state = 526 #Okinawa
-								state = 524 #Taiwan
-								state = 555 #Kuril
-								state = 646 #Saipan
-							}
-							is_owned_by = JAP
-							NOT = {
-								is_controlled_by = JAP
-							}
-						}
-					}
-					name = COLLECTION_FALLEN_RING_ISLAND_STATES_3
-				}
-				value > 3
-			}
 		}
 
 		bypass = {
@@ -10906,16 +10862,16 @@ focus_tree = {
 			modifier = {
 				factor = 0 
 				OR = {
-					1115 = { #Wuhan
+					1115 = {
 						is_controlled_by_ROOT_or_subject = yes
 					}
-					1116 = { #Chonqing
+					1116 = {
 						is_controlled_by_ROOT_or_subject = yes
 					}
-					327 = { #Manila
+					327 = {
 						is_controlled_by_ROOT_or_subject = yes
 					}
-					285 = { #New South Wales
+					285 = {
 						is_controlled_by_ROOT_or_subject = yes
 					}
 				}
@@ -10935,38 +10891,6 @@ focus_tree = {
 					}
 				}
 				has_global_flag = JAP_nuke_2
-				AND = { #R56
-					526 = { # Okinawa 
-						is_owned_by = ROOT
-						NOT = {
-							is_controlled_by = ROOT
-						}
-					}
-					645 = { # Iwo Jima 
-						is_owned_by = ROOT
-						NOT = {
-							is_controlled_by = ROOT
-						}
-					}
-					646 = {	# Saipan
-						is_owned_by = ROOT
-						NOT = {
-							is_controlled_by = ROOT
-						}
-					}
-					524 = { # Taiwan
-						is_owned_by = ROOT
-						NOT = {
-							is_controlled_by = ROOT
-						}
-					}
-					555 = { # Kuril Islands 
-						is_owned_by = ROOT
-						NOT = {
-							is_controlled_by = ROOT
-						}
-					}
-				}
 			}
 		}
 

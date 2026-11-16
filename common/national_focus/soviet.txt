@@ -1322,18 +1322,8 @@ focus_tree = {
 
 	focus = { #unlock this focus once the war with a major is over
 		id = SOV_restoration_and_development
-		icon = {
-			GFX_focus_generic_stalinist_industry = {
-				AND = {
-					original_tag = SOV
-					has_country_leader = {
-						ruling_only = yes
-						character = SOV_iosif_stalin
-					}					
-				}
-			}
-			GFX_focus_generic_industry_investment = yes
-		}
+
+		icon = GFX_focus_generic_modernize_industry
 		prerequisite = { focus = SOV_industrial_modernization focus = SOV_optimize_production_lines }
 		x = 2
 		y = 1
@@ -4264,7 +4254,7 @@ focus_tree = {
 	focus = {
 		id = SOV_advanced_maneuvers
 
-		icon = GFX_focus_generic_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = SOV_expand_shipbuilding_plants }
 		prerequisite = { focus = SOV_an_oceangoing_navy }
 		x = 0
@@ -5475,7 +5465,6 @@ focus_tree = {
 					has_dlc = "Arms Against Tyranny"
 				}
 				add_doctrine_cost_reduction = {
-					name = SOV_shocktroops
 					cost_reduction = 0.5
 					uses = 2
 					category = cat_shocktroops_doctrine
@@ -5550,7 +5539,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { SOV_defense_industry_production_speed_coastal_bunker_factor = 0.05 }
 			add_to_variable = { SOV_defense_industry_production_speed_bunker_factor = 0.05 }
-			add_to_variable = { SOV_defense_industry_max_dig_in = 2 }
+			add_to_variable = { SOV_defense_industry_max_dig_in_factor = 0.05 }
 			custom_effect_tooltip = SOV_military_engineering_university_ns_tt
 		}
 	}
@@ -5671,7 +5660,7 @@ focus_tree = {
 				create_operative_leader = {
 					name = SOV_ursula_kuczynski
 					GFX = GFX_Portrait_ursula_kuczynski
-					gender = female
+					female = yes
 					traits = { operative_safe_cracker operative_infiltrator }
 					bypass_recruitment = no
 					available_to_spy_master = yes
@@ -8081,6 +8070,7 @@ focus_tree = {
 					create_operative_leader = {
 						name = SOV_dimitry_medvedev
 						GFX = GFX_Portrait_dmitry_medvedev
+#						female = yes	#56
 						traits = { operative_demolition_expert operative_commando }
 						bypass_recruitment = no
 						available_to_spy_master = yes
@@ -8659,7 +8649,7 @@ focus_tree = {
 
 		completion_reward = {
 			clr_country_flag = SOV_paranoia_do_not_cancel_focus_flag
-			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_focus_flag value = 1 days = 15 } #Used to prevent random purges from popping up while this is active
+			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_focus_flag days = 15 } #Used to prevent random purges from popping up while this is active
 			set_country_flag = SOV_first_moscow_trial_flag #Used to unlock the next purge focus
 
 			add_political_power = 25
@@ -8940,7 +8930,7 @@ focus_tree = {
 
 		completion_reward = {
 			clr_country_flag = SOV_paranoia_do_not_cancel_focus_flag
-			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_focus_flag value = 1 days = 15 } #Used to prevent random purges from popping up while this is active
+			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_focus_flag days = 15 } #Used to prevent random purges from popping up while this is active
 			set_country_flag = SOV_second_moscow_trial_flag #Used to unlock the next purge focus
 
 			add_political_power = 25
@@ -9193,7 +9183,7 @@ focus_tree = {
 
 		completion_reward = {
 			clr_country_flag = SOV_paranoia_do_not_cancel_focus_flag
-			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_focus_flag value = 1 days = 15 } #Used to prevent random purges from popping up while this is active
+			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_focus_flag days = 15 } #Used to prevent random purges from popping up while this is active
 			set_country_flag = SOV_trial_of_the_generals_flag #Used to unlock the next purge focus
 
 			add_political_power = 25
@@ -9356,7 +9346,7 @@ focus_tree = {
 
 		completion_reward = {
 			clr_country_flag = SOV_paranoia_do_not_cancel_focus_flag
-			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_focus_flag value = 1 days = 15 } #Used to prevent random purges from popping up while this is active
+			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_focus_flag days = 15 } #Used to prevent random purges from popping up while this is active
 			set_country_flag = SOV_third_moscow_trial_flag #Used to unlock the next purge focus
 
 			add_political_power = 25
@@ -12230,7 +12220,7 @@ focus_tree = {
 		relative_position_id = SOV_reverse_the_collectivization_process
 		cost = 5
 		available = {
-			NOT = { has_global_flag = SOV_soviet_civil_war_over  } # you should be able to do this during the CW as well
+			NOT = { has_country_flag = SOV_soviet_civil_war_over } # you should be able to do this during the CW as well
 			SOV_has_selected_hq = yes 
 		}
 
@@ -15051,8 +15041,13 @@ focus_tree = {
 		
 		available = {
 			NOT = { has_country_flag = SOV_paranoia_system_active_flag }
-			any_country_of = {
-				target = { ENG FRA GER ITA }
+			any_country = {
+				OR = {
+					tag = ENG
+					tag = FRA
+					tag = GER
+					tag = ITA
+				}
 				has_government = fascism
 				is_major = yes
 			}
@@ -15061,8 +15056,13 @@ focus_tree = {
 
 		bypass = { #r56
 			NOT = {
-				any_country_of = {
-					target = { ENG FRA GER ITA }
+				any_country = {
+					OR = {
+						tag = ENG
+						tag = FRA
+						tag = GER
+						tag = ITA
+					}
 					has_government = fascism
 					is_major = yes
 				}
@@ -15353,8 +15353,13 @@ focus_tree = {
 		
 		available = {
 			NOT = { has_country_flag = SOV_paranoia_system_active_flag }
-			any_country_of = {
-				target = { ENG FRA GER ITA }
+			any_country = {
+				OR = {
+					tag = ENG
+					tag = FRA
+					tag = GER
+					tag = ITA
+				}
 				has_government = democratic
 				is_major = yes
 				is_subject = no
@@ -17031,7 +17036,7 @@ focus_tree = {
 					owns_state = 347
 					owns_state = 340
 					OR = {
-						is_subject_of = ROOT
+						is_puppet_of = ROOT
 						is_in_faction_with = ROOT
 					}	
 					
@@ -17461,8 +17466,8 @@ focus_tree = {
 		mutually_exclusive = { focus = SOV_reconcile_japan }
 
 		available = {
-			any_country_with_original_tag_of = {
-				target = constant:country_groups.literally_china
+			any_country = {
+				SOV_is_free_chinese_tag = yes
 				has_war_with = JAP
 			}
 			is_subject = no
@@ -18213,7 +18218,7 @@ focus_tree = {
 			}
 			NOT = {
 				JAP = {
-					is_subject = no
+					is_puppet = no
 					has_completed_focus = JAP_support_the_kodoha_faction
 				}
 			}
@@ -19325,7 +19330,7 @@ focus_tree = {
 
 	focus = {
 		id = SOV_sabotage_behind_enemy_lines
-		icon = GFX_focus_generic_sabotage
+		icon = GFX_focus_prc_infiltration
 		prerequisite = { focus = SOV_reinstitute_okhrana }
 		x = 0
 		y = 1
@@ -21982,7 +21987,7 @@ focus_tree = {
 				add_idea = SOV_agrarian_socialism_3
 			}
 			add_tech_bonus = {
-				name = SOV_rebuild_the_republic
+				name = SOV_rebuild_the_republic_nsb
 				bonus = 1
 				uses = 1
 				category = construction_tech
@@ -22304,6 +22309,7 @@ focus = {
 			retire_character = SOV_iosif_stalin
 			create_country_leader = {
 				name = "Nikolay Yezhov"
+				desc = "POLITICS_NIKOLAI_YEZHOV_DESC"
 				picture = "gfx/leaders/SOV/r56_portrait_SOV_Nikolai_Yezhov.dds"
 				expire = "1965.1.1"
 				ideology = leninism
@@ -22518,6 +22524,7 @@ focus = {
 		}
 		create_country_leader = { #dies in '38 but has event for replacement
 			name = "Kirill Vladimirovich"
+			desc = "POLITICS_KIRIL_VLADIMIROVICH_DESC"
 			picture = "r56_portrait_SOV_Kirill_Vladimirovich_Romanov.dds"
 			expire = "1965.1.1"
 			ideology = constitutional_monarchy
@@ -25341,7 +25348,7 @@ focus = {
 		factor = 1
 	}
 	available = {
-		is_subject = no
+		is_puppet = no
 	}
 
 	bypass = {
@@ -25428,7 +25435,7 @@ focus = {
 		factor = 1
 	}
 	available = {
-		is_subject = no
+		is_puppet = no
 		r56_script_i_am_sane = yes
 		MON = {
 			r56_script_target_is_sane = yes
@@ -25498,7 +25505,7 @@ focus = {
 		factor = 1
 	}
 	available = {
-		is_subject = no
+		is_puppet = no
 		has_navy_size = {
 			size > 15
 		}
@@ -25523,7 +25530,7 @@ focus = {
 					MAN = {
 						exists = yes
 						owns_state = 761
-						is_subject = no
+						is_puppet = no
 					}
 				}
 				create_wargoal = {
@@ -25583,7 +25590,7 @@ focus = {
 	}
 
 	available = {
-		is_subject = no
+		is_puppet = no
 		has_navy_size = {
 			size > 15
 		}
@@ -25642,7 +25649,7 @@ focus = {
 		factor = 1
 	}
 	available = {
-		is_subject = no
+		is_puppet = no
 		r56_script_i_am_sane = yes
 		POL = {
 			r56_script_target_is_sane = yes
@@ -27636,7 +27643,7 @@ focus = {
 		}
 		available = {
 			NOT = {
-				is_subject_of = JAP
+				is_puppet_of = JAP
 			}
 		}
 
@@ -27874,7 +27881,7 @@ focus = {
 				is_ai = no
 			}
 			surrender_progress < 0.1
-			is_subject = no
+			is_puppet = no
 			custom_trigger_tooltip = {
 				tooltip = iron_curtain_tt		
 				count_triggers = {
@@ -28251,7 +28258,7 @@ focus = {
 					has_government = communism
 				}
 				has_civil_war = no
-				is_subject = no
+				is_puppet = no
 			}
 		}
 
@@ -28413,19 +28420,19 @@ focus = {
 			}
 			BUL = {
 				is_in_faction_with = SOV
-				is_subject_of = SOV
+				is_puppet_of = SOV
 			}
 			ROM = {
 				is_in_faction_with = SOV
-				is_subject_of = SOV
+				is_puppet_of = SOV
 			}
 			GRE = {
 				is_in_faction_with = SOV
-				is_subject_of = SOV
+				is_puppet_of = SOV
 			}
 			ALB = {
 				is_in_faction_with = SOV
-				is_subject_of = SOV
+				is_puppet_of = SOV
 			}
 		}
 

@@ -72,6 +72,7 @@ focus_tree = {
 				has_country_flag = SPR_spanish_elections_flag
 			}
 		}
+		cancel_if_invalid = yes
 		
 		bypass = {
 			has_global_flag = spanish_civil_war
@@ -1435,7 +1436,7 @@ focus_tree = {
 			add_country_leader_role = { # R56 - Updated from legacy system
 				character = SPA_emilio_mola
 				country_leader = {
-					ideology = despotism
+					ideology = corporatism
 					traits = {
 						the_director
 						r56_trait_opposed_to_communism
@@ -1564,7 +1565,7 @@ focus_tree = {
 		}
 		prerequisite = { focus = SPA_establish_the_directory focus = SPA_extol_the_martyrs_of_the_war }
 		
-		icon = GFX_focus_generic_mountain_fortification
+		icon = GFX_goal_generic_fortify_city
 		x = 4
 		y = 2
 		relative_position_id = SPA_establish_the_directory
@@ -1574,13 +1575,6 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = SPA_prepare_the_pyrenees_defenses_tt
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_tech_bonus = {
-				name = FRA_fortification_focus
-				bonus = 1
-				uses = 1
-				category = cat_fortification
-			}
 			hidden_effect = {
 				792 = {
 					add_building_construction = {
@@ -1752,7 +1746,7 @@ focus_tree = {
 				drop_cosmetic_tag = yes
 				set_cosmetic_tag = SPA_spanish_empire
 				SPA_emilio_mola = {
-					remove_country_leader_role = { ideology = despotism }
+					remove_country_leader_role = { ideology = corporatism }
 					remove_country_leader_role = { ideology = falangism }
 				}
 			}
@@ -2456,8 +2450,10 @@ focus_tree = {
 				limit = {
 					NOT = {
 						any_state = {
-							is_core_of = POR
-							is_controlled_by = ROOT
+							AND = {
+								is_core_of = POR
+								is_controlled_by = ROOT
+							}
 						}
 					}
 				}
@@ -2856,7 +2852,7 @@ focus_tree = {
 		relative_position_id = SPA_retake_the_americas
 		x = 0
 		y = 1
-		cost = 30
+		cost = 10
 
 		prerequisite = {
 			focus = SPA_retake_the_americas
@@ -3488,7 +3484,8 @@ focus_tree = {
 	focus = {
 		id = SPA_fascist_economic_aid
 		available = {
-			any_allied_country = {
+			any_country = {
+				is_in_faction_with = ROOT
 				has_government = fascism
 				is_major = yes
 			}
@@ -3534,9 +3531,10 @@ focus_tree = {
 			has_full_control_of_state = 176
 			has_full_control_of_state = 792
 			has_full_control_of_state = 41
-			any_allied_country = { # R56
+			any_country = { # R56
 				is_major = yes
-				has_government = fascism # R56
+				has_government = fascism
+				is_in_faction_with = ROOT # R56
 			}
 		}
 		bypass = {
@@ -3618,9 +3616,10 @@ focus_tree = {
 	focus = {
 		id = SPA_improve_cross_country_railways
 		available = {
-			any_allied_country = { # R56
+			any_country = {
 				is_major = yes
 				has_government = fascism
+				is_in_faction_with = ROOT # R56
 			}
 			has_full_control_of_state = 169
 			has_full_control_of_state = 789
@@ -3663,7 +3662,8 @@ focus_tree = {
 	focus = {
 		id = SPA_support_the_war_industry
 		available = {
-			any_allied_country = {
+			any_country = {
+				is_in_faction_with = ROOT
 				has_government = fascism
 				is_major = yes
 			}
@@ -3786,7 +3786,8 @@ focus_tree = {
 	focus = {
 		id = SPA_the_duty_to_work
 		available = {
-			any_allied_country = {
+			any_country = {
+				is_in_faction_with = ROOT
 				has_government = fascism
 				is_major = yes
 			}
@@ -3811,7 +3812,8 @@ focus_tree = {
 	focus = {
 		id = SPA_expand_the_war_industry
 		available = {
-			any_allied_country = {
+			any_country = {
+				is_in_faction_with = ROOT
 				has_government = fascism
 				is_major = yes
 			}
@@ -4388,7 +4390,7 @@ focus_tree = {
 			add_country_leader_role = {
 				character = "SPA_francisco_franco"
 				country_leader = {
-				  ideology=despotism
+				  ideology=conservatism_n
 				  traits = { caudillo_1 }
 				  expire="1965.1.1"
 				}
@@ -6066,8 +6068,8 @@ focus_tree = {
 	focus = {
 		id = SPA_demand_french_north_africa
 		available = {
-			any_country_with_original_tag = {
-				original_tag_to_check = FRA
+			any_country = {
+				original_tag = FRA
 				has_focus_tree = vichy_french_focus
 				owns_state = 461
 				owns_state = 462
@@ -6265,14 +6267,6 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = FRA_fortification_focus
-				bonus = 1
-				uses = 1
-				category = cat_fortification
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-
 			custom_effect_tooltip = SPA_defenses_against_invasion_tt
 			every_owned_state = {
 				limit = {
@@ -6370,8 +6364,8 @@ focus_tree = {
 			add_state_claim = 772
 			IF = {
 				limit = {
-					any_country_with_original_tag = {
-						original_tag_to_check = FRA
+					any_country = {
+						original_tag = FRA
 						OR = {
 							owns_state = 557
 							owns_state = 272
@@ -8523,7 +8517,7 @@ focus_tree = {
 		}
 		prerequisite = { focus = SPA_a_fleet_worthy_of_a_king }
 		
-		icon = GFX_focus_generic_large_navy
+		icon = GFX_goal_generic_navy_battleship
 		x = 0
 		y = 1
 		relative_position_id = SPA_a_fleet_worthy_of_a_king
@@ -9688,10 +9682,11 @@ focus_tree = {
 					owns_state = 179
 					owns_state = 795 # R56
 				}
-				any_country_with_original_tag = { # R56
-					original_tag_to_check = POR
+				any_country = { # R56
+					original_tag = POR
 					has_cosmetic_tag = SPR_POR_anarchism
 					is_subject_of = ROOT
+
 				}
 			}
 
@@ -9711,10 +9706,11 @@ focus_tree = {
 		completion_reward = {
 			if = { # R56
 				limit = {
-					any_country_with_original_tag = {
-						original_tag_to_check = POR
+					any_country = {
+						original_tag = POR
 						has_cosmetic_tag = SPR_POR_anarchism
 						is_subject_of = ROOT
+	
 					}
 				}
 				every_other_country = {
@@ -9927,44 +9923,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SPR_factory_and_plant_committees
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPR_regional_defense_council_of_iberia }
-		prerequisite = { focus = SPR_torchbearers_of_tomorrow }
-		
-		icon = GFX_focus_SOV_merge_plants
-		x = 0
-		y = 1
-		relative_position_id = SPR_regional_defense_council_of_iberia
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					is_core_of = ROOT
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			swap_ideas = {
-				remove_idea = SPR_torchbearers_of_tomorrow
-				add_idea = SPR_torchbearers_of_tomorrow_2
-			}
-		}
-	}
-
-	focus = {
 		id = SPR_the_inevitable_counterblow
 		available = {
 			has_country_leader = {
@@ -10092,9 +10050,9 @@ focus_tree = {
 		}
 		prerequisite = { focus = SPR_improve_military_infrastructure }
 		
-		icon = GFX_focus_generic_mountain_fortification
+		icon = GFX_goal_generic_fortify_city
 		x = 0
-		y = 2
+		y = 1
 		relative_position_id = SPR_improve_military_infrastructure
 		cost = 10
 
@@ -10102,13 +10060,6 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = SPR_fortify_the_pyrenees_tt
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_tech_bonus = {
-				name = FRA_fortification_focus
-				bonus = 1
-				uses = 1
-				category = cat_fortification
-			}	
 			hidden_effect = {
 				792 = {
 					add_building_construction = {
@@ -10414,7 +10365,7 @@ focus_tree = {
 		
 		icon = GFX_goal_generic_construction2
 		x = 0
-		y = 2
+		y = 1
 		relative_position_id = SPR_militarize_the_industry
 		cost = 10
 
@@ -10512,30 +10463,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SPR_to_do_that_which_is_right
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPR_militarize_the_people }
-		
-		icon = GFX_focus_ITA_corpo_volontari_della_liberta
-		x = -1
-		y = 1
-		relative_position_id = SPR_militarize_the_people
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_MANPOWER}
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = SPR_the_threats_abound_3
-				add_idea = SPR_the_threats_abound_4
-			}
-		}
-	}
-
-	focus = {
 		id = SPR_anarchism_knows_no_borders
 		available = {
 		}
@@ -10545,7 +10472,7 @@ focus_tree = {
 		
 		icon = GFX_focus_spr_anarchism_knows_no_borders
 		x = 0
-		y = 2
+		y = 1
 		relative_position_id = SPR_militarize_the_people
 		cost = 10
 
@@ -10568,7 +10495,7 @@ focus_tree = {
 				traits = { operative_linguist }
 				bypass_recruitment = no
 				available_to_spy_master = yes
-				gender = female
+				female = yes
 				nationalities = { FRA UKR RUT }
 			}
 			create_operative_leader = { #r56
@@ -10685,7 +10612,7 @@ focus_tree = {
 
 	focus = { # R56
 		id = SPR_voluntary_mountain_militias
-		icon = GFX_focus_generic_mountain_troops
+		icon = GFX_focus_GRE_a_land_of_mountains
 		prerequisite = { focus = SPR_anarchism_knows_no_borders }
 		prerequisite = { focus = SPR_fortify_the_pyrenees }
 		x = -2
@@ -10852,7 +10779,7 @@ focus_tree = {
 		}
 		prerequisite = { focus = SPR_the_anti_fascist_workers_revolution }
 		
-		icon = GFX_focus_generic_spur_communist_revolutions # R56
+		icon = GFX_goal_generic_army # R56
 		x = -1
 		y = 1
 		relative_position_id = SPR_the_anti_fascist_workers_revolution
@@ -12768,8 +12695,8 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					any_country_with_original_tag = {
-						original_tag_to_check = SOV
+					any_country = {
+						original_tag = SOV
 						has_government = communism
 						NOT = { has_completed_focus = SOV_the_right_opposition }
 					}
@@ -12827,13 +12754,6 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = FRA_fortification_focus
-				bonus = 1
-				uses = 1
-				category = cat_fortification
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = SPR_recovering_from_civil_war_focus_tt
 			custom_effect_tooltip = SPA_prepare_the_pyrenees_defenses_tt
 			hidden_effect = {

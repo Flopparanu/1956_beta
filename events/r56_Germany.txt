@@ -8300,16 +8300,7 @@ country_event = {
 			FROM = { country_event = new_ger.20 }
 		}
 		ai_chance = {
-			base = 100
-			modifier = {		#we are united against you, bud
-				add = -90
-				is_in_faction = yes
-			}
-			modifier = {		#You'll have to take it from our cold, dead hands
-				factor = 0
-				is_subject = no
-				is_major = yes
-			}
+			base = 2
 		}
 	}
 	option = {
@@ -8347,7 +8338,7 @@ country_event = {
 			FROM = { country_event = new_ger.21 }
 		}
 		ai_chance = {
-			base = 50
+			base = 1
 		}
 	}
 }
@@ -8660,17 +8651,6 @@ country_event = {
 			add_political_power = -50
 			add_to_variable = { pie_chart_dirty = 1 }
 			hidden_effect = {
-				IF = {
-					limit = {
-						OR = {
-							has_completed_focus = GER_zentrum_in_coalition
-							has_completed_focus = GER_dnvp_in_coalition
-						}
-
-					}
-					GER_undo_gov = yes
-					set_country_flag = GER_no_gov
-				}
 				uncomplete_national_focus = {
 					focus = GER_zentrum_in_coalition
 					uncomplete_children = yes
@@ -8679,10 +8659,20 @@ country_event = {
 					focus = GER_dnvp_in_coalition
 					uncomplete_children = no
 				}
-				GER_set_parliament = yes
+				IF = {
+					limit = {
+						OR = {
+							
+							check_variable = { GER_chosen_gov_leader = 1.5 }
+							check_variable = { GER_chosen_gov_leader = 3 }
+						}
+					}
+					set_variable = { GER_chosen_gov_leader = 2 }
+				}
+				complete_national_focus = GER_dvu_in_coalition
 				create_pie_chart = yes
+				mark_focus_tree_layout_dirty = yes
 			}
-			mark_focus_tree_layout_dirty = yes
 		}
 		ai_chance = {
 			base = 0
@@ -8717,9 +8707,6 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			hidden_effect = {
-				remove_country_leader_trait = desperate_gambit
-			}
 			set_cosmetic_tag = GER_kpd_cosmetic
 			delete_unit_template_and_units = { division_template = "Infantry Division" }
 			delete_unit_template_and_units = { division_template = "Division d'Infanterie" }
@@ -10099,17 +10086,10 @@ country_event = {
 		name = new_ger.53.a
 		set_country_flag = GER_spd_banned
 		add_stability = -0.025
-		IF = {
-			limit = { has_country_flag = GER_dvu_formed }
-			add_to_variable = { DSTP_seats = 30 }
-			custom_effect_tooltip = GER_DSTP_30_tt
-		}
-		else = {
-			add_to_variable = { Zentrum_seats = 15 }
-			custom_effect_tooltip = GER_zentrum_15_tt
-			add_to_variable = { DSTP_seats = 15 }
-			custom_effect_tooltip = GER_DSTP_15_tt
-		}
+		add_to_variable = { Zentrum_seats = 15 }
+		custom_effect_tooltip = GER_zentrum_15_tt
+		add_to_variable = { DSTP_seats = 15 }
+		custom_effect_tooltip = GER_DSTP_15_tt
 		ai_chance = {
 			base = 3
 		}
@@ -12640,7 +12620,6 @@ country_event = {
 	}
 	option = {
 		name = new_ger.106.c
-		clr_country_flag = guardians_of_peace_been_at_war_flag
 		set_faction_manifest = faction_manifest_protector_of_peace
 		remove_faction_goal = faction_goal_secure_european_continent
 		add_faction_goal = faction_goal_guardians_of_peace

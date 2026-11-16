@@ -3200,6 +3200,7 @@ country_event = {
 					militia = { x = 1 y = 0 }
 					militia = { x = 1 y = 1 }
 				}
+				override_model = POR_militia_alt_2_entity
 			}
 			497 = {
 				create_unit = {
@@ -3436,6 +3437,7 @@ country_event = {
 					militia = { x = 1 y = 0 }
 					militia = { x = 1 y = 1 }
 				}
+				override_model = POR_militia_alt_2_entity
 			}
 			497 = {
 				create_unit = {

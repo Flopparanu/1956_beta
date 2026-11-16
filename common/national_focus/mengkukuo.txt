@@ -102,7 +102,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = MEN_continue_the_ways_of_old
 			add_tech_bonus = {
-				name = MEN_continue_the_ways_of_old
 				bonus = 0.5
 				uses = 1
 				ahead_reduction = 0.5
@@ -2775,7 +2774,6 @@ focus_tree = {
 				}
 				create_intelligence_agency = {
 					name = "Minister of Security"
-					icon = GFX_r56_agency_logo_1
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
@@ -7504,7 +7502,7 @@ focus_tree = {
 
 	focus = {
 		id = MEN_promote_chinese_unity
-		icon = GFX_focus_PRC_peaceful_reunification
+		icon = GFX_focus_prc_social_democracy
 		prerequisite = { 
 			focus = MEN_favour_the_cooperationists
 		}

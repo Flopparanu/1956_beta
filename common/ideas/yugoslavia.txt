@@ -1009,8 +1009,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				equipment_conversion_speed = 0.15
-				land_equipment_upgrade_xp_cost = -0.15
+				equipment_conversion_speed = 0.05
 			}
 		}
 
@@ -1036,7 +1035,7 @@ ideas = {
 		
 		YUG_brigadistas_idea = {
 		
-			picture = SWE_varnplikt
+			picture = generic_flexible_foreign_policy2
 			
 			allowed = {
 				always = no
@@ -1049,8 +1048,8 @@ ideas = {
 			}
 			
 			modifier = {
-				send_volunteer_divisions_required = -0.40
-				send_volunteers_tension = -0.5
+				send_volunteer_divisions_required = -0.30
+				send_volunteers_tension = -0.4
 			}
 			
 			cancel = {
@@ -1077,10 +1076,7 @@ ideas = {
 			}
 			
 			available = {
-				NOT = { 
-					has_government = communism 
-					has_country_leader = { ruling_only = yes character = YUG_peter_ii } 
-				}
+				NOT = { has_government = communism }
 
 								
 			}
@@ -1152,28 +1148,7 @@ ideas = {
 			modifier = {
 				navy_leader_start_coordination_level = 1
 			}
-		}
-		YUG_air_combat_school = {
-	
-			picture = generic_air_fighter
-
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				air_ace_generation_chance_factor = 0.1
-				air_superiority_efficiency = 0.05
-				air_mission_xp_gain_factor = 0.1
-
-			}
-		}
+		}		
 	}
 
 	political_advisor = {

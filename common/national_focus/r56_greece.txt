@@ -2059,7 +2059,6 @@ focus = {
 					has_dlc = "Arms Against Tyranny"
 				}
 				add_doctrine_cost_reduction = {
-					name = GRE_special_forces
 					cost_reduction = 0.5
 					uses = 2
 					category = special_forces_doctrine
@@ -2254,7 +2253,7 @@ focus = {
 		y = 1
 		available = {
 			is_in_faction = no
-			is_subject = no
+			is_puppet = no
 			has_government = fascism
 			ITA = {
 				is_major = yes
@@ -2327,7 +2326,7 @@ focus = {
 		}
 		available = {
 			is_in_faction = no
-			is_subject = no
+			is_puppet = no
 			has_government = fascism
 			any_other_country = {
 				is_major = yes
@@ -2384,7 +2383,7 @@ focus = {
 			factor = 9
 		}
 		available = {
-			is_subject = no
+			is_puppet = no
 			has_government = fascism
 			has_war = no
 		}
@@ -2451,7 +2450,7 @@ focus = {
 				limit = {
 					183 = {
 						OWNER = {
-							is_subject = no
+							is_puppet = no
 						}
 					}					
 				}
@@ -3079,7 +3078,7 @@ focus = {
 					}
 				}
 				ALB = {
-					is_subject_of = ITA
+					is_puppet_of = ITA
 				}
 			}
 		}
@@ -3297,7 +3296,7 @@ focus = {
 	bypass = {
 		ALB = {
 			OR = {
-				is_subject_of = GRE
+				is_puppet_of = GRE
 				exists = no
 				AND = {
 					has_war_with = GRE
@@ -3350,7 +3349,10 @@ focus = {
 		  }
 		  is_faction_leader = yes
 		}
-		is_subject = no
+		
+			is_puppet = no
+		
+				
 	}
 
 	bypass = {
@@ -3394,7 +3396,7 @@ focus = {
 				}
 				is_faction_leader = yes			
 			}
-			is_subject = no
+			is_puppet = no
 			
 		}
 
@@ -3630,7 +3632,7 @@ focus = {
 				has_war_with = FRA
 			}
 			OR = {
-				is_subject = no
+				is_puppet = no
 				is_in_faction_with = FRA
 			}	
 			
@@ -3722,7 +3724,7 @@ focus = {
 				has_war_with = ENG
 			}
 			OR = {
-				is_subject = no
+				is_puppet = no
 				is_in_faction_with = ENG
 			}				
 		}
@@ -3920,7 +3922,7 @@ focus = {
 			factor = 12
 		}
 		available = {
-			is_subject = no
+			is_puppet = no
 			is_in_faction = no
 			any_other_country = {
 				is_major = yes
@@ -4667,8 +4669,8 @@ focus = {
 				factor = 60
 				modifier = {
 					factor = 0
-					any_country_with_original_tag = {
-						original_tag_to_check = YUG
+					any_country = {
+						original_tag = YUG
 						has_government = communism
 						is_faction_leader = yes
 						has_capitulated = no
@@ -4703,8 +4705,15 @@ focus = {
 			}
 
 			available = {
-				any_country_with_original_tag_of = {
-					target = { YUG TUR BUL ROM ALB }
+				any_country = {
+					OR = {
+						original_tag = YUG
+						original_tag = TUR
+						original_tag = BUL
+						original_tag = ROM
+						original_tag = ALB
+					}
+					
 					has_government = communism
 					is_faction_leader = yes
 					has_capitulated = no
@@ -4717,8 +4726,8 @@ focus = {
 				set_rule = { can_create_factions = yes }
 				if = {
 					limit = {
-						any_country_with_original_tag = {
-							original_tag_to_check = YUG
+						any_country = {
+							original_tag = YUG
 							has_government = communism
 							is_faction_leader = yes
 							has_capitulated = no
@@ -4730,8 +4739,8 @@ focus = {
 				}
 				else_if = {
 					limit = {
-						any_country_with_original_tag = {
-							original_tag_to_check = ROM
+						any_country = {
+							original_tag = ROM
 							has_government = communism
 							is_faction_leader = yes
 							has_capitulated = no
@@ -4743,8 +4752,8 @@ focus = {
 				}
 				else_if = {
 					limit = {
-						any_country_with_original_tag = {
-							original_tag_to_check = BUL
+						any_country = {
+							original_tag = BUL
 							has_government = communism
 							is_faction_leader = yes
 							has_capitulated = no
@@ -4756,8 +4765,8 @@ focus = {
 				}
 				else_if = {
 					limit = {
-						any_country_with_original_tag = {
-							original_tag_to_check = TUR
+						any_country = {
+							original_tag = TUR
 							has_government = communism
 							is_faction_leader = yes
 							has_capitulated = no
@@ -4769,8 +4778,8 @@ focus = {
 				}
 				else_if = {
 					limit = {
-						any_country_with_original_tag = {
-							original_tag_to_check = ALB
+						any_country = {
+							original_tag = ALB
 							has_government = communism
 							is_faction_leader = yes
 							has_capitulated = no
@@ -4807,7 +4816,7 @@ focus = {
                         has_government = communism
 					 }
 					exists = yes
-					is_subject = no
+					is_puppet = no
 				}
 			}
 
@@ -4854,7 +4863,7 @@ focus = {
 					has_government = communism
 				}
 				exists = yes
-				is_subject = no
+				is_puppet = no
 			}
 		}
 
@@ -4906,7 +4915,7 @@ focus = {
 					has_government = communism
 				}
 				exists = yes
-				is_subject = no
+				is_puppet = no
 			}
 		}
 
@@ -5042,7 +5051,7 @@ focus = {
 			NOT = {
 				ROM = {
 					has_government = communism
-					is_subject = yes
+					is_puppet = yes
 				}
 			}
 		}		
@@ -5076,7 +5085,7 @@ focus = {
 			BUL = {
 				NOT = { has_war_with = GRE }
 				exists = yes
-				is_subject = no
+				is_puppet = no
 				is_in_faction = no
 			}
 		}
@@ -5127,7 +5136,7 @@ focus = {
 			ALB = {
 				NOT = { has_war_with = GRE }
 				exists = yes
-				is_subject = no
+				is_puppet = no
 				is_in_faction = no
 			}
 		}
@@ -5182,10 +5191,10 @@ focus = {
 			YUG = {
 				NOT = { has_war_with = GRE }
 				exists = yes
-				is_subject = no
+				is_puppet = no
 				is_in_faction = no
 			}
-			is_subject = no
+			is_puppet = no
 		}
 
 		bypass = {
@@ -6017,7 +6026,7 @@ focus = {
 		}
 
 		bypass = {
-			is_subject = yes
+			is_puppet = yes
 		}
       	completion_reward = {
 			add_ideas = neutrality_idea
@@ -6104,7 +6113,7 @@ focus = {
 				is_major = yes
 				has_government = democratic
 			}
-			is_subject = no
+			is_puppet = no
 			is_in_faction = no
 		}
 

@@ -476,17 +476,20 @@ focus_tree = {
 					}
 				}
 			}
-			
-			if = {
+			IF = {
 				limit = {
-					controls_province = 12413
+					1047 = {
+						12413 = {
+							supply_node < 1
+						}
+					}
 				}
 				1047 = {
 					add_building_construction = {
-						type = supply_node
-						level = 1
-						instant_build = yes
-						province = 12413
+					    type = supply_node
+					    level = 1
+					    instant_build = yes
+					    province = 12413
 					}
 				}
 			}
@@ -1073,7 +1076,6 @@ focus_tree = {
 				ENG = { exists = no }
 			}
 		}
-
 		bypass = {
 			ENG = {
 				NOT = {
@@ -1094,6 +1096,17 @@ focus_tree = {
 						resources = { oil }
 					}
 				}
+			}
+		}
+
+		available = {
+			has_army_manpower = { size > 100000 }
+			NOT = { has_country_flag = IRQ_is_kurdistan }
+
+			NOT = {
+				ENG = { is_subject = yes }
+				has_war_with = ENG
+				ENG = { exists = no }
 			}
 		}
 
@@ -3231,6 +3244,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		completion_reward = {
 
 			1045 = {
@@ -3410,7 +3427,12 @@ focus_tree = {
 
 		}
 
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -3713,7 +3735,7 @@ focus_tree = {
 				IRQ_nuri_as_said = {
 					add_country_leader_role = {
 						country_leader = {
-							ideology = despotism
+							ideology = islamic_nationalism
 							expire = "1965.1.1.1"
 							traits = { IRQ_british_lackey }
 						}
@@ -4706,8 +4728,8 @@ focus_tree = {
 					}
 				}
 				OR = {
-					any_country_with_original_tag = {
-						original_tag_to_check = FRA
+					any_country = {
+						original_tag = FRA
 						owns_state = 680
 					}
 					owner = {
@@ -5340,7 +5362,7 @@ focus_tree = {
 			IRQ_hikmat_suleiman = {
 				add_country_leader_role = {
 					country_leader = {
-						ideology = despotism
+						ideology = arab_socialism
 						expire = "1965.1.1.1"
 						traits = { IRQ_social_reformer_pm }
 					}
@@ -5508,7 +5530,7 @@ focus_tree = {
 			IRQ_bakr_sidqi = {
 				add_country_leader_role = {
 					country_leader = {
-						ideology = despotism
+						ideology = military_junta
 						expire = "1965.1.1.1"
 						traits = { dictator }
 					}
@@ -5706,8 +5728,10 @@ focus_tree = {
 				limit = {
 					has_completed_focus = IRQ_strengthen_relations_with_iran
 					NOT = { 
-						has_war_with = PER 
-						is_in_faction_with = PER
+						OR = {
+							has_war_with = PER 
+							is_in_faction_with = PER
+						}
 					}
 				}
 				custom_effect_tooltip = IRQ_anti_western_alliance_per_tt
@@ -5725,8 +5749,10 @@ focus_tree = {
 				limit = {
 					has_completed_focus = IRQ_strengthen_relations_with_turkey
 					NOT = { 
-						has_war_with = TUR 
-						is_in_faction_with = TUR
+						OR = {
+							has_war_with = TUR 
+							is_in_faction_with = TUR
+						}
 					}
 				}
 				custom_effect_tooltip = IRQ_anti_western_alliance_tur_tt
@@ -6140,7 +6166,7 @@ focus_tree = {
 					has_war_with = 799.OWNER
 				}
 				custom_trigger_tooltip = {
-					tooltip = AT_PEACE_WITH_SYRIA_OWNER_TT_NOT
+					tooltip = AT_PEACE_WITH_SYRIA_OWNER_TT
 					has_war_with = 680.OWNER
 					has_war_with = 554.OWNER
 					has_war_with = 677.OWNER
@@ -6771,8 +6797,10 @@ focus_tree = {
 			IF = {
 				limit = {
 					NOT = {
-						has_war_with = USA
-						has_war_with = ENG
+						OR = {
+							has_war_with = USA
+							has_war_with = ENG
+						}
 					}
 				}
 				add_ideas = IRQ_generic_attack_bonus_axis
@@ -8570,7 +8598,7 @@ focus_tree = {
 			        		PREV.PREV = {
 			        			promote_character = {
 			        				character = IRQ_ghazi_i
-			        				ideology = despotism
+			        				ideology = absolute_monarchism
 			        			}
 			        		}
 			        	}
@@ -8664,7 +8692,7 @@ focus_tree = {
 				    character = IRQ_ahmed_barzani
 				    promote_leader = yes
 				    country_leader = {
-				        ideology = despotism
+				        ideology = military_junta
 				        expire = "1965.1.1.1"
 				        traits = { guerilla_warfare_expert }
 				    }
@@ -9158,8 +9186,8 @@ focus_tree = {
 
 		bypass = {
 			OR = {
-				any_country_with_original_tag = {
-					original_tag_to_check = SOV
+				any_country = {
+					original_tag = SOV
 					is_in_faction_with = ROOT
 					exists = yes
 				}
@@ -9174,8 +9202,8 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					any_country_with_original_tag = {
-						original_tag_to_check = SOV
+					any_country = {
+						original_tag = SOV
 						is_faction_leader = yes
 						has_government = communism
 					}
@@ -9255,7 +9283,7 @@ focus_tree = {
 			air_experience = 50
 
 			add_tech_bonus = {
-				name = IRQ_support_from_skies_above
+				name = IRQ_support_from_above
 				bonus = 0.5
 				uses = 1
 				category = plane_modules_tech
@@ -9287,7 +9315,7 @@ focus_tree = {
 					}
 				}
 
-				ELSE = {
+				ELSE_IF = {
 					add_equipment_to_stockpile = {
 						type = CAS_equipment_1
 						amount = 100

@@ -1,19 +1,7 @@
 #####-----> Rt56 Shared Generic Trees <><> <><> <><> 
 	shared_focus = {
 		id = ABC_establish_a_general_staff
-		icon = {		
-			GFX_focus_HUN_the_szekel_command = {
-				original_tag = SZK
-			}				
-			GFX_focus_GER_army = {
-				original_tag = WGR
-			}
-			GFX_goal_ger_nva = {
-				original_tag = DDR
-				has_government = communism
-			}	
-			GFX_focus_generic_military_mission = yes
-		}
+		icon = GFX_focus_generic_military_mission
 		x = 3
 		y = 0
 		allow_branch = {
@@ -96,7 +84,7 @@
 		y = 1
 		relative_position_id = ABC_establish_a_general_staff
 
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -687,33 +675,4 @@
 			}
 		}
 		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_RESEARCH }
-	}
-	shared_focus = {
-		id = ABC_LIB_professionalize_the_frontier_force
-		available = {
-			NOT = {
-				has_idea = LIB_supernatural_warfare
-			}
-		}
-		allow_branch = {
-			tag = LIB
-		}
-
-		bypass = {
-		}
-		prerequisite = { focus = ABC_establish_a_military_academy }
-		prerequisite = { focus = ABC_modern_logistics }
-
-
-		icon = GFX_focus_generic_full_social_mobilization # R56
-		x = 1
-		y = 1
-		relative_position_id = ABC_establish_a_military_academy
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_MANPOWER}
-		completion_reward = {
-			add_ideas = SPR_professional_military_1
-		}
 	}

@@ -511,7 +511,8 @@ focus_tree = {
 			is_in_faction = yes
 			OR = {
 				num_of_factories > 30
-				any_allied_country = {
+				any_country = {
+					is_in_faction_with = ROOT
 					num_of_factories > 30
 				}
 			}
@@ -1080,7 +1081,8 @@ focus_tree = {
 			is_in_faction = yes
 			OR = {
 				num_of_factories > 30
-				any_allied_country = {
+				any_country = {
+					is_in_faction_with = ROOT
 					num_of_factories > 30
 				}
 			}
@@ -1403,7 +1405,8 @@ focus_tree = {
 		prerequisite = { focus = BEL_reduce_parlementarism}		
 		available = {
 			has_country_flag = BEL_king_martial_law
-			any_neighbor_country = {
+			any_country = {
+				is_neighbor_of = BEL
 				NOT = {has_war_with = BEL}
 			}
 			NOT = {
@@ -2205,7 +2208,8 @@ focus_tree = {
 			is_in_faction = yes
 			OR = {
 				num_of_factories > 30
-				any_allied_country = {
+				any_country = {
+					is_in_faction_with = ROOT
 					num_of_factories > 30
 				}
 			}
@@ -3507,7 +3511,7 @@ focus_tree = {
 
 	focus = {
         id = BEL_fortress_belgium
-        icon = GFX_focus_BEL_eben_emael_fortress
+        icon = GFX_goal_generic_construct_military
 		relative_position_id = BEL_invest_in_FN_Herstal
         x = 1
         y = 1
@@ -3530,13 +3534,6 @@ focus_tree = {
         }        
 		cost = 10
         completion_reward = {
-			add_tech_bonus = {
-				name = FRA_fortification_focus
-				bonus = 1
-				uses = 1
-				category = cat_fortification
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
             34 = {
                 add_building_construction = {
                     type = bunker
@@ -3544,38 +3541,32 @@ focus_tree = {
                     province = 11519
                     instant_build = yes
                 }
-
+                add_building_construction = {
+                    type = bunker
+                    level = 3
+                    province = 6537
+                    instant_build = yes
+                }
                 add_building_construction = {
                     type = bunker
                     level = 1
                     province = 3516
                     instant_build = yes
                 }
-
-			}
-			1095 = {
-                add_building_construction = {
-                    type = bunker
-                    level = 3
-                    province = 6537
-                    instant_build = yes
-                }				
-			} 
-			965 = {
 				add_building_construction = {
                     type = bunker
                     level = 2
                     province = 3488
                     instant_build = yes
-				}				
-			}         
+				}
+			}          
         }
         search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
     }
    
     focus = {
         id = BEL_fortress_french_border
-        icon = GFX_focus_SWI_fortify_border_with_france
+        icon = GFX_goal_generic_construct_military
 		relative_position_id = BEL_fortress_belgium
         x = -2
         y = 0
@@ -3600,13 +3591,6 @@ focus_tree = {
 			}			
 		}	
         completion_reward = {
-			add_tech_bonus = {
-				name = FRA_fortification_focus
-				bonus = 1
-				uses = 1
-				category = cat_fortification
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
             6 = {
                 add_building_construction = {
                     type = bunker
@@ -3627,15 +3611,13 @@ focus_tree = {
                     level = 1
                     province = 9536
                     instant_build = yes
-                }
+                    }
                 add_building_construction = {
                     type = bunker
                     level = 1
                     province = 13081
                     instant_build = yes
-                }
-            }
-			965 = {
+                    }
 				add_building_construction = {
                     type = bunker
                     level = 1
@@ -3649,12 +3631,12 @@ focus_tree = {
                     instant_build = yes
                     }	
                 }				
-			}
+            }
             search_filters = { FOCUS_FILTER_INDUSTRY }
         }    
 	focus = {
         id = BEL_reinforce_antwerp_brussels
-        icon = GFX_focus_BEL_koningshooikt_wavre_line
+        icon = GFX_goal_generic_construct_military
 		relative_position_id = BEL_fortress_belgium
         x = -1
         y = 1
@@ -3675,9 +3657,6 @@ focus_tree = {
                     province = 516
                     instant_build = yes
                     }
-
-			}
-			1094 = {
                 add_building_construction = {
                     type = bunker
                     level = 2

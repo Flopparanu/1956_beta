@@ -2065,7 +2065,8 @@ AFG_inflitrate_pakistan_category = {
 			controls_state = 442
 			controls_state = 444
 			controls_state = 445
-			any_enemy_country = {
+			any_country = {
+				has_war_with = AFG
 				owns_state = 442
 				owns_state = 444
 				owns_state = 445
@@ -2073,7 +2074,8 @@ AFG_inflitrate_pakistan_category = {
 		}
 
 		visible = {	
-			any_enemy_country = {
+			any_country = {
+				has_war_with = AFG
 				owns_state = 442
 				owns_state = 444
 				owns_state = 445
@@ -2126,7 +2128,8 @@ AFG_inflitrate_pakistan_category = {
 				factor = 3
 			}
 			modifier = {
-				any_enemy_country = {
+				any_country = {
+					has_war_with = AFG
 					NOT = {
 						OR = {
 							original_tag = RAJ

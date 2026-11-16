@@ -1589,7 +1589,6 @@ on_actions = {
 					#The variable is cleared when the idea is removed within the idea
 					set_country_flag = { 
 						flag = JAP_first_strike_principle_remaining_days_1
-						value = 1
 						days = 89
 					}
 					ROOT = {
@@ -1609,7 +1608,6 @@ on_actions = {
 					#The variable is cleared when the idea is removed within the idea
 					set_country_flag = { 
 						flag = JAP_first_strike_principle_remaining_days_2
-						value = 1
 						days = 89
 					}
 					ROOT = {
@@ -1629,7 +1627,6 @@ on_actions = {
 					#The variable is cleared when the idea is removed within the idea
 					set_country_flag = { 
 						flag = JAP_first_strike_principle_remaining_days_3
-						value = 1
 						days = 89
 					}
 					ROOT = {
@@ -1685,7 +1682,6 @@ on_actions = {
 					#The variable is cleared when the idea is removed within the idea
 					set_country_flag = { 
 						flag = JAP_kantai_kessen_remaining_days_1
-						value = 1
 						days = 179
 					}
 					ROOT = {
@@ -1705,7 +1701,6 @@ on_actions = {
 					#The variable is cleared when the idea is removed within the idea
 					set_country_flag = { 
 						flag = JAP_kantai_kessen_remaining_days_2
-						value = 1
 						days = 179
 					}
 					ROOT = {
@@ -1725,7 +1720,6 @@ on_actions = {
 					#The variable is cleared when the idea is removed within the idea
 					set_country_flag = { 
 						flag = JAP_kantai_kessen_remaining_days_3
-						value = 1
 						days = 179
 					}
 					ROOT = {
@@ -3287,10 +3281,12 @@ on_actions = {
 						limit = {
 							has_dynamic_modifier = { modifier = CHI_electrification_and_mass_education_modifier }
 							NOT = {
-								is_island_state = yes
-								has_state_category = large_island
-								has_state_category = small_island
-								has_state_category = tiny_island
+								OR = {
+									is_island_state = yes
+									has_state_category = large_island
+									has_state_category = small_island
+									has_state_category = tiny_island
+								}
 							}
 						}
 						random_neighbor_state = {

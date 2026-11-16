@@ -949,28 +949,6 @@ SOV = {
 		type = fighter
 	}
 
-	ace = { # 
-		name = "Nelson " # armenian origin
-		callsign = ""
-		surname = Stepanian
-		type = cas
-	}
-	ace = { # 
-		name = "Talgat " # azeri origin
-		callsign = ""
-		surname = Bigeldinov
-		type = cas
-	}
-
-	ace = { # 
-		name = "Mikhail"
-		callsign = "Petrovich"
-		surname = Odintsov
-		type = cas
-	}
-
- 
-
 	prefix = o_operatsiya
 	
 	use_geographical_default_operation_names = yes
@@ -1574,95 +1552,6 @@ USA = {
 		Vraciu Benko Carl Carson Herbst Thornell Varnell Godfrey Baker Miller Harris Beerbower Peterson Hill Landers Mehle Holloway Neale Marontate
 	}
 	callsigns = { "Goose" "Iceman" "Maverick" "Apollo" "Animal" "Boom-Boom" "Badger" "Brick" "Cajun" "Challenger" "Chip" "Eagle" "Ghost" "Hawk" "Jaws" "Moses" "Mad Dog" "Yanks" "Digger" "Ambusher" "Swifty" "Vengeful" "Sweep Dive" "Sweety" "Woody" "Bayou" "Red Shirt" "The Fly" "Elephant" "Dancer" "Swing" }
-
-	ace = { #
-		name = 	"Richard"
-		callsign = "Dick"
-		surname = Bong
-		type = fighter
-	}
-	ace = { #
-		name = 	"Thomas"
-		callsign = ""
-		surname = "McGuire Jr."
-		type = fighter
-	}
-	ace = { #
-		name = David
-		callsign = ""
-		surname = "McCampbell"		
-		type = fighter
-	}
-	ace = { #
-		name = Gregory
-		callsign = "Pappy"
-		surname = "Boyington"		
-		type = fighter
-	}
-	ace = { #
-		name = Francis
-		callsign = "Gabby"
-		surname = "Gabreski"		
-		type = fighter
-	}
-	ace = { #
-		name = Robert
-		callsign = "Bob"
-		surname = "Johnson"		
-		type = fighter
-	}
-	ace = { #
-		name = Charles
-		callsign = "Mac"
-		surname = "MacDonald"		
-		type = fighter
-	}
-	ace = { #
-		name = George
-		callsign = "Ratsy"
-		surname = "Preddy Jr."		
-		type = fighter
-	}
-	ace = { #
-		name = Joe
-		callsign = "Smokey Joe"
-		surname = "Foss"		
-		type = fighter
-	}
-	ace = { #
-		name = Robert
-		callsign = "Butcher Bob" # if you go to war, be sure that your pal has a name ensuring that he will be good at it.
-		surname = "Hanson"		
-		type = fighter
-	}
-
- 	ace = { # 
-		name = "James" #
-		callsign = "Lizzie" # just a Rampage monster joke, nothing to see here
-		surname = Rampage # some people are born for war, pushed for nuclear capable naval aviation later
-		type = cas
-	}
-
-	ace = { # 
-		name = "Richard" #
-		callsign = "Dick" #made up
-		surname = Best	
-		type = cas
-	}
-
-	ace = { # 
-		name = "Quentin" #
-		callsign = "" #made up
-		surname = Aanenson	
-		type = cas
-	}
-
-	ace = { # 
-		name = "Norman Jack" #
-		callsign = "Dusty"
-		surname = Kleiss
-		type = cas
-	}
 
 	operation = {
 
@@ -3368,7 +3257,7 @@ RKM = {
  		}
 	}
 	surnames = {
-		Abig Adam Adler Adolph Albach Albert Alles Alt Altergott Amen Appelhans Aqua Arndt Arnhold Arni Arnold Artzer Aschenbrenner Asselborn Auer Axthelm Bäcker Bähr Bamberger Bartholomai Barthuly Bastron Batt Batthauser Bauer Baumann Baumgärtner Bechthold Bechtold Beck Beckel Becker Befus Behringer Beideck Beilman Beisel Beitz Bender Berg Berger Bernhardt Bessinger Betz Biehn Bischoff Bitter Blumenschein Bock Bohl Bonacker Borgdorf Bossert Bossler Bott Braun Brenning Bretter Bretthauer Brettman Bretzer Brickman Brill Brücher Brückman Büchner Burbach Burkhardt Busch Buseck Buss Buxbaum Buxmann Claus Dahlinger Damm Daniel Daubert Debus Deines Deisel Dellos Derr Detterer Diehl Dierlam Dieser Dietz Ditmar Döll Dorn Dörr Dorsch Dortman Driess Dumler Eberhard Eberhardt Eberling Ebert Eckert Eckhardt Eckler Edel Eich Eichhorn Eichmann Eisele Eisenach Eisenhuth Eitenmüller Elsässer Engel Engelhardt Erck Erder Eüler Euler Eurich Ewig Faber Falkenstein Faust Fech Fein Fendel Feuerstein Fischer Flath Folgart Foos Forschauer Frank Frantz Frick Frick Friedrich Fries Fritz Fritzler Fröhlich Froscheiser Früauf Fuchs Gallowa Gammerstrath Gantz Gerber Gerlach Gies Gieswein Glaser Glock Glockenhammer Glöckner Göbel Goette Gomer Gorr Gossmann Göttmann Götz Graf Gramlich Grasmück Grosch Gross Grún Grünemeier Grünwald Gutherich Gutmann Gutscher Guttmann Haas Habermann Haffner Hagelganz Hahn Hall Hamburg Harres Hartmann Hartung Hassenpflug Hecht Hederich Heffele Hegele Hegwald Heidenreich Heimbüchner Hein Heinrich Heitzenreder Helbrecht Heldt Helfenbein Heller Helmuth Helwig Hempel Henkel Henn Herber Herdt Hergenheim Hergert Hessler Hettinger Hetzel Heusel Hieronymus Hildt Hill Hilt Hix Hoch Hofferber Hoffman Hofmann Hohnstein Hohweiler Holstein Hölz Holzwart Höppner Horn Hornus Horst Huber Huck Ickes Idt Ifland Ils Iphöffer Iskam Jacobi Jäger Jäkel Johann Jost Jung Jungmann Junker Kaiser Kalbfleisch Kaltner Kammerzell Kappel Kappes Kaucher Kechter Kembel Kempel Kexel Kiehn Kildau Kimmel Kinderknecht Kindsvater Kirschbaum Kissler Kister Klamm Klaus Kleiber Klein Kleinfelder Klink Kloberdanz Kloster Knaus Kniss Knödler Kober Koch Köhler Kohlmann Kollas Konschuh Körbel Körber Kraft Krämer Kraus Krebs Kreick Krening Kromm Kunkel Kuntzmann Kutscher Lambrecht Langholf Langlitz Lapp Laubhan Lauck Lauterbach Lederer Lederhos Legler Lehr Lei Leichner Leiker Lein Leinweber Leister Lenz Leonhardt Lerch Lesser Licht Lichtenberger Lichtenwald Linenberg Lingelbach Link Lipps Lissmann Litzenberger Löbsack Lohnes Lohrengel Lonsinger Loos Loßacker Lotz Luft Lust Luther Lüttig Lutz Machleit Magel Mai Major Manweiler Manz Martin Maser Maul Maurer Meier Meisinger Meisner Melcher Mentzer Merkel Mertes Metz Metzler Meyer Michaelis Michel Mill Miltenberger Mohn Mohr Mohrlang Molko Moninger Morasch Moritz Morkel Müller Müller Müller Münster Müntermann Muth Mützig Näb Nafts Nagelschmidt Nazarenus Neubauer Neuberger Neuhard Nickel Niedecker Niedenthal Oberheim Oberitter Oblander Ochsenhirt Oldt Orth Ostertag Oswald Ott Pappenheim Paul Pauli Paulÿ Peppler Peter Pfaffenroth Pfilbert Pflaumer Philippi Pickelhaubt Pinnecker Plouqet Präfried Prasch Preisendorf Quindt Raab Rauh Rausch Ravensberg Rebuhn Reh Rehn Reifschneider Reimer Rein Reinhardt Reinick Reis Reiswig Reiter Reitz Repp Rettig Reuscher Reuss Reuter Richter Ries Rikl Ritter Robertus Röder Roh Rohn Romeis Römer Romig Rommel Rosskopf Roth Röth Rothenberger Rothermel Rübsamen Rudolph Ruhl Rupp Ruppel Rusch Rutt Rutz Saalfeld Sack Sauer Sauerbrey Schäfer Schander Schanzenbach Scharf Schaufler Scheidt Schenk Schick Schickentantz Schimpf Schlegel Schleicher Schlotthauer Schmidt Schmunck Schnegelberger Schneider Scholl Schöneman Schössler Schott Schreiber Schreiner Schreieck Schremser Schuh Schultheis Schultz Schwab Schwabauer Schwabenland Schwan Schwartz Schwartzkopf  Seib Seibel Siegward Simon Sinner Sittner Söpp Sorberger Sorg Spahn Spangenberger Speuer Sprangel Staab Stahl Stamm Stang Stärkel Steinbach Steinbrecher Steinbrenner Steinert Steinle Steinmetz Stellwagen Stiehl Stoll Störger Stork Stössel Streck Stroh Strohmann Stromberger Stürtz Suppes Thierolf Traub Traudt Traut Trin Trippel Trupp Ubert Uhrich Ulrich Urbach Urban Usinger Utz Vogel Vogler Voigt Völck Volk Volz Waag Wacker Wagner Waldschmidt Walter Wasenmüller Wasmuth Wassen Wassinger Weber Weckesser Weidemann Weidhardt Weigandt Weisgerber Weisheim Weiss Weitz Weitzel Welsch Wentz Wenzel Wenzereich Werth Wiedemann Wiederspahn Wiegand Wilhelm Will Willmann Windecker Winkelhausen Wittwanger Wolff Wollet Würfel Würtz Zell Zentner Zieg Ziegler Zimmermann Zinn Zisch Zittel Zitterkopf Zitzer Zitzmann Zorn Zürckgiebel
+		Abig Adam Adler Adolph Albach Albert Alles Alt Altergott Amen Appelhans Aqua Arndt Arnhold Arni Arnold Artzer Aschenbrenner Asselborn Auer Axthelm Bäcker Bähr Bamberger Bartholomai Barthuly Bastron Batt Batthauser Bauer Baumann Baumgärtner Bechthold Bechtold Beck Beckel Becker Befus Behringer Beideck Beilman Beisel Beitz Bender Berg Berger Bernhardt Bessinger Betz Biehn Bischoff Bitter Blumenschein Bock Bohl Bonacker Borgdorf Bossert Bossler Bott Braun Brenning Bretter Bretthauer Brettman Bretzer Brickman Brill Brücher Brückman Büchner Burbach Burkhardt Busch Buseck Buss Buxbaum Buxmann Claus Dahlinger Damm Daniel Daubert Debus Deines Deisel Dellos Derr Detterer Diehl Dierlam Dieser Dietz Ditmar Döll Dorn Dörr Dorsch Dortman Driess Dumler Eberhard Eberhardt Eberling Ebert Eckert Eckhardt Eckler Edel Eich Eichhorn Eichmann Eisele Eisenach Eisenhuth Eitenmüller Elsässer Engel Engelhardt Erck Erder Eüler Euler Eurich Ewig Faber Falkenstein Faust Fech Fein Fendel Feuerstein Fischer Flath Folgart Foos Forschauer Frank Frantz Frick Frick Friedrich Fries Fritz Fritzler Fröhlich Froscheiser Früauf Fuchs Gallowa Gammerstrath Gantz Gerber Gerlach Gies Gieswein Glaser Glock Glockenhammer Glöckner Göbel Goette Gomer Gorr Gossmann Göttmann Götz Graf Gramlich Grasmück Grosch Gross Grún Grünemeier Grünwald Gutherich Gutmann Gutscher Guttmann Haas Habermann Haffner Hagelganz Hahn Hall Hamburg Harres Hartmann Hartung Hassenpflug Hecht Hederich Heffele Hegele Hegwald Heidenreich Heimbüchner Hein Heinrich Heitzenreder Helbrecht Heldt Helfenbein Heller Helmuth Helwig Hempel Henkel Henn Herber Herdt Hergenheim Hergert Hessler Hettinger Hetzel Heusel Hieronymus Hildt Hill Hilt Hix Hoch Hofferber Hoffman Hofmann Hohnstein Hohweiler Holstein Hölz Holzwart Höppner Horn Hornus Horst Huber Huck Ickes Idt Ifland Ils Iphöffer Iskam Jacobi Jäger Jäkel Johann Jost Jung Jungmann Junker Kaiser Kalbfleisch Kaltner Kammerzell Kappel Kappes Kaucher Kechter Kembel Kempel Kexel Kiehn Kildau Kimmel Kinderknecht Kindsvater Kirschbaum Kissler Kister Klamm Klaus Kleiber Klein Kleinfelder Klink Kloberdanz Kloster Knaus Kniss Knödler Kober Koch Köhler Kohlmann Kollas Konschuh Körbel Körber Kraft Krämer Kraus Krebs Kreick Krening Kromm Kunkel Kuntzmann Kutscher Lambrecht Langholf Langlitz Lapp Laubhan Lauck Lauterbach Lederer Lederhos Legler Lehr Lei Leichner Leiker Lein Leinweber Leister Lenz Leonhardt Lerch Lesser Licht Lichtenberger Lichtenwald Linenberg Lingelbach Link Lipps Lissmann Litzenberger Löbsack Lohnes Lohrengel Lonsinger Loos Loßacker Lotz Luft Lust Luther Lüttig Lutz Machleit Magel Mai Major Manweiler Manz Martin Maser Maul Maurer Meier Meisinger Meisner Melcher Mentzer Merkel Mertes Metz Metzler Meyer Michaelis Michel Mill Miltenberger Mohn Mohr Mohrlang Molko Moninger Morasch Moritz Morkel Müller Müller Müller Münster Müntermann Muth Mützig Näb Nafts Nagelschmidt Nazarenus Neubauer Neuberger Neuhard Nickel Niedecker Niedenthal Oberheim Oberitter Oblander Ochsenhirt Oldt Orth Ostertag Oswald Ott Pappenheim Paul Pauli Paulÿ Peppler Peter Pfaffenroth Pfilbert Pflaumer Philippi Pickelhaubt Pinnecker Plouqet Präfried Prasch Preisendorf Quindt Raab Rauh Rausch Ravensberg Rebuhn Reh Rehn Reifschneider Reimer Rein Reinhardt Reinick Reis Reiswig Reiter Reitz Repp Rettig Reuscher Reuss Reuter Richter Ries Rikl Ritter Robertus Röder Roh Rohn Romeis Römer Romig Rommel Rosskopf Roth Röth Rothenberger Rothermel Rübsamen Rudolph Ruhl Rupp Ruppel Rusch Rutt Rutz Saalfeld Sack Sauer Sauerbrey Schäfer Schander Schanzenbach Scharf Schaufler Scheidt Schenk Schick Schickentantz Schimpf Schlegel Schleicher Schlotthauer Schmidt Schmunck Schnegelberger Schneider Scholl Schöneman Schössler Schott Schreiber Schreiner Schreieck Schremser Schuh Schultheis Schultz Schwab Schwabauer Schwabenland Schwan Schwartz Schwartzkopf  Seib Seibel Siegward Simon Sinner Sittner Söpp Sorberger Sorg Spahn Spangenberger Speuer Sprangel Staab Stahl Stamm Stang Stärkel Steinbach Steinbrecher Steinbrenner Steinert Steinle Steinmetz Stellwagen Stiehl Stoll Störger Stork Stössel Streck Stroh Strohmann Stromberger Stürtz Suppes Thierolf Traub Traudt Traut Trin Trippel Trupp Ubert Uhrich Ulrich Urbach Urban Usinger Utz Vogel Vogler Voigt Völck Volk Volz “von der Heit” Waag Wacker Wagner Waldschmidt Walter Wasenmüller Wasmuth Wassen Wassinger Weber Weckesser Weidemann Weidhardt Weigandt Weisgerber Weisheim Weiss Weitz Weitzel Welsch Wentz Wenzel Wenzereich Werth Wiedemann Wiederspahn Wiegand Wilhelm Will Willmann Windecker Winkelhausen Wittwanger Wolff Wollet Würfel Würtz Zell Zentner Zieg Ziegler Zimmermann Zinn Zisch Zittel Zitterkopf Zitzer Zitzmann Zorn Zürckgiebel
 	}
 	callsigns = {  }
 }
@@ -3386,7 +3275,7 @@ RKL = {
  		}
 	}
 	surnames = {
-		Abig Adam Adler Adolph Albach Albert Alles Alt Altergott Amen Appelhans Aqua Arndt Arnhold Arni Arnold Artzer Aschenbrenner Asselborn Auer Axthelm Bäcker Bähr Bamberger Bartholomai Barthuly Bastron Batt Batthauser Bauer Baumann Baumgärtner Bechthold Bechtold Beck Beckel Becker Befus Behringer Beideck Beilman Beisel Beitz Bender Berg Berger Bernhardt Bessinger Betz Biehn Bischoff Bitter Blumenschein Bock Bohl Bonacker Borgdorf Bossert Bossler Bott Braun Brenning Bretter Bretthauer Brettman Bretzer Brickman Brill Brücher Brückman Büchner Burbach Burkhardt Busch Buseck Buss Buxbaum Buxmann Claus Dahlinger Damm Daniel Daubert Debus Deines Deisel Dellos Derr Detterer Diehl Dierlam Dieser Dietz Ditmar Döll Dorn Dörr Dorsch Dortman Driess Dumler Eberhard Eberhardt Eberling Ebert Eckert Eckhardt Eckler Edel Eich Eichhorn Eichmann Eisele Eisenach Eisenhuth Eitenmüller Elsässer Engel Engelhardt Erck Erder Eüler Euler Eurich Ewig Faber Falkenstein Faust Fech Fein Fendel Feuerstein Fischer Flath Folgart Foos Forschauer Frank Frantz Frick Frick Friedrich Fries Fritz Fritzler Fröhlich Froscheiser Früauf Fuchs Gallowa Gammerstrath Gantz Gerber Gerlach Gies Gieswein Glaser Glock Glockenhammer Glöckner Göbel Goette Gomer Gorr Gossmann Göttmann Götz Graf Gramlich Grasmück Grosch Gross Grún Grünemeier Grünwald Gutherich Gutmann Gutscher Guttmann Haas Habermann Haffner Hagelganz Hahn Hall Hamburg Harres Hartmann Hartung Hassenpflug Hecht Hederich Heffele Hegele Hegwald Heidenreich Heimbüchner Hein Heinrich Heitzenreder Helbrecht Heldt Helfenbein Heller Helmuth Helwig Hempel Henkel Henn Herber Herdt Hergenheim Hergert Hessler Hettinger Hetzel Heusel Hieronymus Hildt Hill Hilt Hix Hoch Hofferber Hoffman Hofmann Hohnstein Hohweiler Holstein Hölz Holzwart Höppner Horn Hornus Horst Huber Huck Ickes Idt Ifland Ils Iphöffer Iskam Jacobi Jäger Jäkel Johann Jost Jung Jungmann Junker Kaiser Kalbfleisch Kaltner Kammerzell Kappel Kappes Kaucher Kechter Kembel Kempel Kexel Kiehn Kildau Kimmel Kinderknecht Kindsvater Kirschbaum Kissler Kister Klamm Klaus Kleiber Klein Kleinfelder Klink Kloberdanz Kloster Knaus Kniss Knödler Kober Koch Köhler Kohlmann Kollas Konschuh Körbel Körber Kraft Krämer Kraus Krebs Kreick Krening Kromm Kunkel Kuntzmann Kutscher Lambrecht Langholf Langlitz Lapp Laubhan Lauck Lauterbach Lederer Lederhos Legler Lehr Lei Leichner Leiker Lein Leinweber Leister Lenz Leonhardt Lerch Lesser Licht Lichtenberger Lichtenwald Linenberg Lingelbach Link Lipps Lissmann Litzenberger Löbsack Lohnes Lohrengel Lonsinger Loos Loßacker Lotz Luft Lust Luther Lüttig Lutz Machleit Magel Mai Major Manweiler Manz Martin Maser Maul Maurer Meier Meisinger Meisner Melcher Mentzer Merkel Mertes Metz Metzler Meyer Michaelis Michel Mill Miltenberger Mohn Mohr Mohrlang Molko Moninger Morasch Moritz Morkel Müller Müller Müller Münster Müntermann Muth Mützig Näb Nafts Nagelschmidt Nazarenus Neubauer Neuberger Neuhard Nickel Niedecker Niedenthal Oberheim Oberitter Oblander Ochsenhirt Oldt Orth Ostertag Oswald Ott Pappenheim Paul Pauli Paulÿ Peppler Peter Pfaffenroth Pfilbert Pflaumer Philippi Pickelhaubt Pinnecker Plouqet Präfried Prasch Preisendorf Quindt Raab Rauh Rausch Ravensberg Rebuhn Reh Rehn Reifschneider Reimer Rein Reinhardt Reinick Reis Reiswig Reiter Reitz Repp Rettig Reuscher Reuss Reuter Richter Ries Rikl Ritter Robertus Röder Roh Rohn Romeis Römer Romig Rommel Rosskopf Roth Röth Rothenberger Rothermel Rübsamen Rudolph Ruhl Rupp Ruppel Rusch Rutt Rutz Saalfeld Sack Sauer Sauerbrey Schäfer Schander Schanzenbach Scharf Schaufler Scheidt Schenk Schick Schickentantz Schimpf Schlegel Schleicher Schlotthauer Schmidt Schmunck Schnegelberger Schneider Scholl Schöneman Schössler Schott Schreiber Schreiner Schreieck Schremser Schuh Schultheis Schultz Schwab Schwabauer Schwabenland Schwan Schwartz Schwartzkopf  Seib Seibel Siegward Simon Sinner Sittner Söpp Sorberger Sorg Spahn Spangenberger Speuer Sprangel Staab Stahl Stamm Stang Stärkel Steinbach Steinbrecher Steinbrenner Steinert Steinle Steinmetz Stellwagen Stiehl Stoll Störger Stork Stössel Streck Stroh Strohmann Stromberger Stürtz Suppes Thierolf Traub Traudt Traut Trin Trippel Trupp Ubert Uhrich Ulrich Urbach Urban Usinger Utz Vogel Vogler Voigt Völck Volk Volz Waag Wacker Wagner Waldschmidt Walter Wasenmüller Wasmuth Wassen Wassinger Weber Weckesser Weidemann Weidhardt Weigandt Weisgerber Weisheim Weiss Weitz Weitzel Welsch Wentz Wenzel Wenzereich Werth Wiedemann Wiederspahn Wiegand Wilhelm Will Willmann Windecker Winkelhausen Wittwanger Wolff Wollet Würfel Würtz Zell Zentner Zieg Ziegler Zimmermann Zinn Zisch Zittel Zitterkopf Zitzer Zitzmann Zorn Zürckgiebel
+		Abig Adam Adler Adolph Albach Albert Alles Alt Altergott Amen Appelhans Aqua Arndt Arnhold Arni Arnold Artzer Aschenbrenner Asselborn Auer Axthelm Bäcker Bähr Bamberger Bartholomai Barthuly Bastron Batt Batthauser Bauer Baumann Baumgärtner Bechthold Bechtold Beck Beckel Becker Befus Behringer Beideck Beilman Beisel Beitz Bender Berg Berger Bernhardt Bessinger Betz Biehn Bischoff Bitter Blumenschein Bock Bohl Bonacker Borgdorf Bossert Bossler Bott Braun Brenning Bretter Bretthauer Brettman Bretzer Brickman Brill Brücher Brückman Büchner Burbach Burkhardt Busch Buseck Buss Buxbaum Buxmann Claus Dahlinger Damm Daniel Daubert Debus Deines Deisel Dellos Derr Detterer Diehl Dierlam Dieser Dietz Ditmar Döll Dorn Dörr Dorsch Dortman Driess Dumler Eberhard Eberhardt Eberling Ebert Eckert Eckhardt Eckler Edel Eich Eichhorn Eichmann Eisele Eisenach Eisenhuth Eitenmüller Elsässer Engel Engelhardt Erck Erder Eüler Euler Eurich Ewig Faber Falkenstein Faust Fech Fein Fendel Feuerstein Fischer Flath Folgart Foos Forschauer Frank Frantz Frick Frick Friedrich Fries Fritz Fritzler Fröhlich Froscheiser Früauf Fuchs Gallowa Gammerstrath Gantz Gerber Gerlach Gies Gieswein Glaser Glock Glockenhammer Glöckner Göbel Goette Gomer Gorr Gossmann Göttmann Götz Graf Gramlich Grasmück Grosch Gross Grún Grünemeier Grünwald Gutherich Gutmann Gutscher Guttmann Haas Habermann Haffner Hagelganz Hahn Hall Hamburg Harres Hartmann Hartung Hassenpflug Hecht Hederich Heffele Hegele Hegwald Heidenreich Heimbüchner Hein Heinrich Heitzenreder Helbrecht Heldt Helfenbein Heller Helmuth Helwig Hempel Henkel Henn Herber Herdt Hergenheim Hergert Hessler Hettinger Hetzel Heusel Hieronymus Hildt Hill Hilt Hix Hoch Hofferber Hoffman Hofmann Hohnstein Hohweiler Holstein Hölz Holzwart Höppner Horn Hornus Horst Huber Huck Ickes Idt Ifland Ils Iphöffer Iskam Jacobi Jäger Jäkel Johann Jost Jung Jungmann Junker Kaiser Kalbfleisch Kaltner Kammerzell Kappel Kappes Kaucher Kechter Kembel Kempel Kexel Kiehn Kildau Kimmel Kinderknecht Kindsvater Kirschbaum Kissler Kister Klamm Klaus Kleiber Klein Kleinfelder Klink Kloberdanz Kloster Knaus Kniss Knödler Kober Koch Köhler Kohlmann Kollas Konschuh Körbel Körber Kraft Krämer Kraus Krebs Kreick Krening Kromm Kunkel Kuntzmann Kutscher Lambrecht Langholf Langlitz Lapp Laubhan Lauck Lauterbach Lederer Lederhos Legler Lehr Lei Leichner Leiker Lein Leinweber Leister Lenz Leonhardt Lerch Lesser Licht Lichtenberger Lichtenwald Linenberg Lingelbach Link Lipps Lissmann Litzenberger Löbsack Lohnes Lohrengel Lonsinger Loos Loßacker Lotz Luft Lust Luther Lüttig Lutz Machleit Magel Mai Major Manweiler Manz Martin Maser Maul Maurer Meier Meisinger Meisner Melcher Mentzer Merkel Mertes Metz Metzler Meyer Michaelis Michel Mill Miltenberger Mohn Mohr Mohrlang Molko Moninger Morasch Moritz Morkel Müller Müller Müller Münster Müntermann Muth Mützig Näb Nafts Nagelschmidt Nazarenus Neubauer Neuberger Neuhard Nickel Niedecker Niedenthal Oberheim Oberitter Oblander Ochsenhirt Oldt Orth Ostertag Oswald Ott Pappenheim Paul Pauli Paulÿ Peppler Peter Pfaffenroth Pfilbert Pflaumer Philippi Pickelhaubt Pinnecker Plouqet Präfried Prasch Preisendorf Quindt Raab Rauh Rausch Ravensberg Rebuhn Reh Rehn Reifschneider Reimer Rein Reinhardt Reinick Reis Reiswig Reiter Reitz Repp Rettig Reuscher Reuss Reuter Richter Ries Rikl Ritter Robertus Röder Roh Rohn Romeis Römer Romig Rommel Rosskopf Roth Röth Rothenberger Rothermel Rübsamen Rudolph Ruhl Rupp Ruppel Rusch Rutt Rutz Saalfeld Sack Sauer Sauerbrey Schäfer Schander Schanzenbach Scharf Schaufler Scheidt Schenk Schick Schickentantz Schimpf Schlegel Schleicher Schlotthauer Schmidt Schmunck Schnegelberger Schneider Scholl Schöneman Schössler Schott Schreiber Schreiner Schreieck Schremser Schuh Schultheis Schultz Schwab Schwabauer Schwabenland Schwan Schwartz Schwartzkopf  Seib Seibel Siegward Simon Sinner Sittner Söpp Sorberger Sorg Spahn Spangenberger Speuer Sprangel Staab Stahl Stamm Stang Stärkel Steinbach Steinbrecher Steinbrenner Steinert Steinle Steinmetz Stellwagen Stiehl Stoll Störger Stork Stössel Streck Stroh Strohmann Stromberger Stürtz Suppes Thierolf Traub Traudt Traut Trin Trippel Trupp Ubert Uhrich Ulrich Urbach Urban Usinger Utz Vogel Vogler Voigt Völck Volk Volz “von der Heit” Waag Wacker Wagner Waldschmidt Walter Wasenmüller Wasmuth Wassen Wassinger Weber Weckesser Weidemann Weidhardt Weigandt Weisgerber Weisheim Weiss Weitz Weitzel Welsch Wentz Wenzel Wenzereich Werth Wiedemann Wiederspahn Wiegand Wilhelm Will Willmann Windecker Winkelhausen Wittwanger Wolff Wollet Würfel Würtz Zell Zentner Zieg Ziegler Zimmermann Zinn Zisch Zittel Zitterkopf Zitzer Zitzmann Zorn Zürckgiebel
 	}
 	callsigns = {  }
 }
@@ -5224,12 +5113,6 @@ NZL = {
 	
 	 }
 	callsigns = { }
-	ace = { # 
-		name = "Desmond" #
-		callsign = ""
-		surname = Scott
-		type = cas
-	}
 }
 
 SAB = {
@@ -8370,18 +8253,6 @@ CAN = {
 		surname = Hill		
 		type = fighter
 	}
-	ace = { # 
-		name = "Charles" #
-		callsign = ""
-		surname = Green
-		type = cas
-	}
- 	ace = { # 
-		name = "Harry" #
-		callsign = ""
-		surname = Hardy
-		type = cas
-	}
 }
 
 # NORTH AMERICAN REICHSKOMMISSARIAT
@@ -8947,13 +8818,13 @@ INC = {
 	}
 	female = {
 		names = {
-			Amankay Iianah Pilpintu Panqara Nina Nayra Sartaña Kantuta Warm Huayra Aruma Jallu Cura
+			Amank’ay Iianah Pilpintu Panqara Nina Nayra “Rina Aymara” Sartaña Kantuta Warm Huayra Aruma Jallu Cura
 		}
 	}
 	surnames = {
 		Tupaq Quispe Paucar Huamán Huantar Katari Yupanqui Pachacutec Capac Guazcar Atahualpa Túpac Ocllo Cusi
 	}
-	callsigns = { SapaInca Aymara Cuzco }
+	callsigns = { “Sapa Inca” Aymara Cuzco }
 }
 MIS = {
 	male = {

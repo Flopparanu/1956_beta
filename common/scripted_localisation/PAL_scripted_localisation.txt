@@ -40,10 +40,10 @@ defined_text = {
 		trigger = {
 			has_global_flag = MPL_jerusalem_conference
 		}
-		localization_key = "PAL_establish_the_new_state"
+		localization_key = "Establish the New State"
 	}
 	text = {
-		localization_key = "PAL_the_boycott_decree"
+		localization_key = "The Boycott Decree"
 	}
 }
 defined_text = {

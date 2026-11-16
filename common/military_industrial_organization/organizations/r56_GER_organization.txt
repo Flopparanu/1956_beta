@@ -60,7 +60,7 @@ GER_hanomag_organization = {
 				GER = {
 					has_opinion = {
 						target = INS
-						value > -15
+						value > 9
 					}
 				}
 			}

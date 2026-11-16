@@ -1227,7 +1227,8 @@ JAP_take_philipine = {
 			}
 			has_completed_focus = JAP_demand_tonkinese_bases
 		}
-		PHI = {
+		any_country = {
+			tag = PHI
 			exists = yes
 			NOT = {
 				is_subject_of = JAP
@@ -1237,9 +1238,10 @@ JAP_take_philipine = {
 	}
 
 	abort = {
-		PHI = {
+		any_country = {
+			tag = PHI
 			OR = {
-				exists = no
+				exists = yes
 				is_subject_of = JAP
 				is_in_faction_with = JAP
 			}

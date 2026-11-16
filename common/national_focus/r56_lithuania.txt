@@ -1196,7 +1196,7 @@ focus = {
 
 focus = {
 	id = LIT_a_separate_branch
-	icon = GFX_goal_generic_admirality
+	icon = GFX_goal_generic_navy_carrier
 	x = 40
 	y = 0
 	cost = 5
@@ -3892,12 +3892,6 @@ focus = {
 			owns_state = 11
 		}
 		completion_reward = {
-			add_tech_bonus = {
-				name = FRA_fortification_focus
-				bonus = 1
-				uses = 1
-				category = cat_fortification
-			}
 			#add_ideas = LAT_fortifications
 			add_ideas = deterrence
 			188 = {
@@ -3952,12 +3946,6 @@ focus = {
 			owns_state = 189
 		}
 		completion_reward = {
-			add_tech_bonus = {
-				name = FRA_fortification_focus
-				bonus = 1
-				uses = 1
-				category = cat_fortification
-			}
 			add_ideas = GEN_Anti_Invasion_I
 			11 = {
 				add_building_construction = {
@@ -7427,8 +7415,14 @@ focus = {
 		prerequisite = { focus = LIT_draw_closer_to_sweden }
 		available = {
 			is_in_faction = no
-			any_country_with_original_tag_of = {
-				target = constant:country_groups.all_nordics
+			any_country = {
+				OR = {
+					original_tag = SWE
+					original_tag = DEN
+					original_tag = NOR
+					original_tag = FIN
+					original_tag = SMI
+				}
 				OR = {
 					has_government = democratic
 					has_government = neutrality

@@ -53,67 +53,23 @@ HUN_mavag_assault_guns_organization = {
 	include = generic_assault_guns_organization
 	icon = GFX_idea_HUN_mavag_assault_gun
 
-
-	allowed = {
-		OR = {
-			original_tag = AUS
-			original_tag = HUN
-			original_tag = CZE
-			original_tag = CRO
-		}
+	allowed = {	
+		original_tag = HUN
 		has_dlc = "Arms Against Tyranny"
 	}
+
 	available = {
-		if = {
+		IF = {
 			limit = {
 				has_dlc = "Gotterdammerung"
-				owner = {
-					original_tag = HUN
-				}
-				
 			}
 			FROM = {
 				has_completed_focus = wuw_HUN_establish_the_mavag_army_division
 			}
 		}
-		else_if = {
-			limit = {
-				owner = {
-					original_tag = HUN
-				}
-			}
+		ELSE = {
 			FROM = {
 				has_completed_focus = HUN_assault_gun_focus
-			}
-		}
-		else_if = {
-			limit = { 
-				owner = {
-					OR = {
-						original_tag = CZE
-						original_tag = AUS
-						original_tag = CRO
-					}
-					NOT = { has_global_flag = aus_dlc_focus_tree } 
-				}
-			}
-			owner = { 
-				has_completed_focus = AH_coordinate_the_land_equipment_manufacturers
-			}
-		}
-		else_if = {
-			limit = { 
-				owner = {
-					OR = {
-						original_tag = CZE
-						original_tag = AUS
-						original_tag = CRO
-					}
-					has_global_flag = aus_dlc_focus_tree
-				}
-			}
-			owner = { 
-				has_completed_focus = HABSBURG_economic_cooperation_policy
 			}
 		}
 	}
@@ -173,27 +129,9 @@ mw_tank_organization = {
 						original_tag = AUS
 						original_tag = CRO
 					}
-					NOT = { has_global_flag = aus_dlc_focus_tree } 
 				}
 			}
-			owner = { 
-				has_completed_focus = AH_coordinate_the_land_equipment_manufacturers
-			}
-		}
-		IF = {
-			limit = { 
-				owner = {
-					OR = {
-						original_tag = CZE
-						original_tag = AUS
-						original_tag = CRO
-					}
-					has_global_flag = aus_dlc_focus_tree
-				}
-			}
-			owner = { 
-				has_completed_focus = HABSBURG_economic_cooperation_policy
-			}
+			owner = { has_completed_focus = AH_coordinate_the_land_equipment_manufacturers }
 		}
 	}
 	initial_trait = {
@@ -273,7 +211,6 @@ HUN_ganz_danubius_organization = { #TODO_Manu: Could do with an extra trait ## R
 						original_tag = CZE
 						original_tag = CRO
 					}
-					NOT = { has_global_flag = aus_dlc_focus_tree } 
 				}
 			}
 			owner = { has_completed_focus = AH_increase_naval_production }

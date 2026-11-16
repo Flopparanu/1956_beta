@@ -1018,7 +1018,7 @@ focus_tree = {
 					name = armor_bonus
 					bonus = 3.0
 					uses = 1
-					category = cat_armored_cars
+					category = armored_cars_tech
 				}
 			}			
 		}
@@ -1047,7 +1047,7 @@ focus_tree = {
 				name = armor_bonus
 				bonus = 1.0
 				uses = 1
-				category = cat_armored_cars
+				category = armored_cars_tech
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }

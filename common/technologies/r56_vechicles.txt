@@ -837,7 +837,7 @@ technologies = {
 		
 		categories = {
 			motorized_equipment
-			cat_armored_cars
+			armored_cars_tech
 			cat_light_armor
 		}
 		special_project_specialization = { specialization_land }
@@ -867,7 +867,7 @@ technologies = {
 		
 		categories = {
 			motorized_equipment
-			cat_armored_cars
+			armored_cars_tech
 			cat_light_armor
 		}
 		special_project_specialization = { specialization_land }
@@ -897,7 +897,7 @@ technologies = {
 		
 		categories = {
 			motorized_equipment
-			cat_armored_cars
+			armored_cars_tech
 			cat_light_armor
 		}
 		special_project_specialization = { specialization_land }
@@ -924,7 +924,7 @@ technologies = {
 		categories = {
 			motorized_equipment
 			armor
-			cat_armored_cars
+			armored_cars_tech
 			armor_variant_tech
 		}
 		special_project_specialization = { specialization_land }

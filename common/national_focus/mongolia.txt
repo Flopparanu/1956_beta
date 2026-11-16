@@ -319,7 +319,7 @@ focus_tree = {
 					name = MON_lessons_from_1934_rebellion
 					bonus = 3
 					uses = 1
-					category = cat_armored_cars
+					category = armored_cars_tech
 				}
 			}
 			add_tech_bonus = {

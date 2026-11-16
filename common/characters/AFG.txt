@@ -8,7 +8,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			ideology = despotism
+			ideology = absolute_monarchism
 			traits = {
 				AFG_pragmatic_modernizer
 				polyglot							#he knew Arabic, Persian, Pashto, Urdu, French and Russian
@@ -939,8 +939,8 @@ characters = {
 		name = AFG_amin_al_husseini
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/PAL/r56_portrait_PAL_Amin_al_Husseini.dds"
-				small = "GFX_idea_PAL_amin_al_husseini"
+				large = "gfx/leaders/PAL/r56_portrait_PAL_Amin_al-Husseini.dds"
+				small = "GFX_idea_PAL_amin_al-husseini"
 			}
 		}
 		advisor = {
@@ -2858,7 +2858,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			ideology = oligarchism
+			ideology = absolute_monarchism
 			expire = "1965.1.1.1"
 			traits = {
 				IRQ_nationalist
@@ -3347,7 +3347,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			ideology = fascism_ideology
+			ideology = emperor_fascism
 			expire = "1965.1.1.1"
 			id = -1
 		}

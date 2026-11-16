@@ -2,7 +2,7 @@
 #Edit for Rt56 by Thinking_Waffle#
 	shared_focus = {
 		id = USC_UNIFIED_central_american_unification
-		icon = GFX_goal_ELS_central_america_flag
+		icon = GFX_goal_MEX_march_southwards
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		prerequisite = { }
@@ -47,17 +47,6 @@
 				has_focus_tree = r56_costa_rica_focus
 			}
 		}	
-		offset = { # Room for the wider CENAM army tree
-			x = 7
-			y = 0
-			trigger = {
-				OR = {
-					has_focus_tree = Guatemala_Focus
-					has_focus_tree = nicaraguan_focus
-					has_focus_tree = r56_costa_rica_focus
-				}
-			}
-		}
 		
 		ai_will_do = {
 			factor = 500

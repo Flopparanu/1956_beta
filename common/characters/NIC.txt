@@ -487,10 +487,7 @@ characters={
 			slot = political_advisor
 			idea_token = NIC_vicente_guadra_gomez
 			allowed  = {
-				OR = {
-					original_tag  = NIC
-					original_tag = ELS
-				}
+				original_tag  = NIC
 			}
 			traits  = {
 				economist

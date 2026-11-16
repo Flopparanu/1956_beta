@@ -174,7 +174,7 @@ focus_tree = {
 				ideology = neutrality
 				popularity = -0.1
 			}
-			custom_effect_tooltip = "PAK_Organize_a_Coup_effect"
+			custom_effect_tooltip = "Will unlock Decisions to enact a coup"
 		}
 
     }
@@ -597,8 +597,19 @@ focus_tree = {
 		completion_reward = {
 			if = { 
 				limit = {
-					any_country_of = {
-						target = { BAN PER AFG IRQ INS TAJ TMS KYR UZB MAL }
+					any_country = {
+						OR = {
+							tag = BAN
+							tag = PER
+							tag = AFG
+							tag = IRQ
+							tag = INS
+							tag = TAJ
+							tag = TMS
+							tag = KYR
+							tag = UZB
+							tag = MAL
+						}
 						OR = {
 							has_government = neutrality
 							has_government = democratic

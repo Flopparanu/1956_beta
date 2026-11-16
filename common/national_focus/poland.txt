@@ -1326,10 +1326,10 @@ focus_tree = {
 					has_dlc = "Arms Against Tyranny"
 				}
 				custom_effect_tooltip = available_mio_tt
-				# show_mio_tooltip = POL_Starachowice_Works_organization
-				# mio:POL_Starachowice_Works_organization = {
-				# 	add_mio_size = 1
-				# }
+				show_mio_tooltip = POL_Starachowice_Works_organization
+				mio:POL_Starachowice_Works_organization = {
+					add_mio_size = 1
+				}
 				mio:POL_fb_organization = {
 					add_mio_funds = 1000
 				}
@@ -2017,10 +2017,8 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 5
-			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = POL_Plan_W
 		}
-		search_filters = { FOCUS_FILTER_ARMY_XP }
 	}
 	
 	focus = { #r56
@@ -2322,22 +2320,21 @@ focus_tree = {
 		prerequisite = { focus = POL_prepare_for_the_next_war }
 		
 		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_MANPOWER }
 		x = 0
 		y = 1
 		relative_position_id = POL_prepare_for_the_next_war
 		cost = 10
-		
+
 		ai_will_do = {
 			factor = 10
 		}
 		completion_reward = {
-			army_experience = 20
-			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = {
 				POL_new_military_academy_idea
 			}
+			army_experience = 20
 		}
-		search_filters = { FOCUS_FILTER_ARMY_XP }
 	}
 
 	focus = { #r56
@@ -2375,17 +2372,16 @@ focus_tree = {
 		}
 
 		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			army_experience = 10
-			custom_effect_tooltip = generic_skip_one_line_tt
 			add_tech_bonus = {
 				name = POL_standardisation_of_equipment
 				bonus = 1.0
 				uses = 1
 				category = infantry_weapons
 			}
+			army_experience = 10
 		}
-		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
 	}
 	
 	focus = { #r56
@@ -2645,24 +2641,6 @@ focus_tree = {
 				localization_key = available_scientist_one_line_tt
 				CHARACTER = POL_rudolf_gundlach
 			}
-			mio:POL_pzinz_organization = {
-				add_mio_funds = 500
-			}
-			if = {
-				limit = { 
-					ROOT = {
-						has_character = POL_rudolf_gundlach
-					}
-				}
-				ROOT = { #He is the GUY
-					POL_rudolf_gundlach = {
-						add_scientist_xp = {
-							experience = 100
-							specialization = specialization_land
-						}
-					}
-				}
-			}
 		}
 	}
 
@@ -2821,11 +2799,11 @@ focus_tree = {
 				limit = {
 					has_dlc = "Arms Against Tyranny"
 				}
-				#custom_effect_tooltip = available_mio_tt ## Change to MIO trait
-				#show_mio_tooltip = POL_H_Cegielski_organization
+				custom_effect_tooltip = available_mio_tt
+				show_mio_tooltip = POL_H_Cegielski_organization
 
-				mio:POL_pzinz_organization = {
-					add_mio_funds = 750
+				mio:POL_H_Cegielski_organization = {
+					add_mio_funds = 1000
 				}
 			}
 			else = {
@@ -2859,7 +2837,6 @@ focus_tree = {
 				uses = 1
 				category = artillery
 			}
-			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				prioritize = { 90 }
 				limit = {
@@ -2876,17 +2853,13 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			custom_effect_tooltip = generic_skip_one_line_tt
 			IF = {
 				limit = {
 					has_dlc = "Arms Against Tyranny"
 				}
-				# mio:POL_Starachowice_Works_organization = {
-				# 	add_mio_size = 1
-				# 	add_mio_funds = 1000
-				# }
-				mio:POL_smpa_organization = {
-					complete_mio_trait = POL_mio_trait_starachowice_works_artillery_production_methods
+				mio:POL_Starachowice_Works_organization = {
+					add_mio_size = 1
+					add_mio_funds = 1000
 				}
 			}
 			else = {
@@ -3830,12 +3803,12 @@ focus_tree = {
 		}
 
 		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY } 
 		completion_reward = {
 			army_experience = 20
 			add_ideas = POL_militarism_focus
 			POL_april_constitution_up = yes
 		}
-		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY FOCUS_FILTER_ARMY_XP } 
 	}
 
 	focus = {
@@ -5235,7 +5208,7 @@ focus_tree = {
 			#hidden_effect = { set_technology = { technical_training_focus = 1 } }
 			custom_effect_tooltip = POL_army_reform
 		}
-		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_EQUIPMENT FOCUS_FILTER_ARMY_XP }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_EQUIPMENT }
 	}
 
 	focus = { #r56
@@ -5602,7 +5575,7 @@ focus_tree = {
 		id = POL_baltic_alliance_focus
 		icon = GFX_goal_baltic_cooperation
 		prerequisite = { focus = POL_baltic_security focus = POL_The_Intermarium }
-		y = 0
+		
 		x = 2
 		relative_position_id = POL_protect_czechozlovakia
 		cost = 10
@@ -5692,7 +5665,7 @@ focus_tree = {
 						has_guaranteed = LIT
 						LIT = {
 							is_in_faction = no
-							is_subject = no
+							is_puppet = no
 						}
 					}
 					LIT = {
@@ -5704,7 +5677,7 @@ focus_tree = {
 						has_guaranteed = LAT
 						LAT = {
 							is_in_faction = no
-							is_subject = no
+							is_puppet = no
 						}
 					}
 					LAT = {
@@ -5716,7 +5689,7 @@ focus_tree = {
 						has_guaranteed = EST
 						EST = {
 							is_in_faction = no
-							is_subject = no
+							is_puppet = no
 						}
 					}
 					EST = {
@@ -5737,7 +5710,7 @@ focus_tree = {
 				limit = {
 					LIT = {
 						is_in_faction = no
-						is_subject = no
+						is_puppet = no
 						NOT = { has_war_with = POL }
 					}
 				}
@@ -5749,7 +5722,7 @@ focus_tree = {
 				limit = {
 					LAT = {
 						is_in_faction = no
-						is_subject = no
+						is_puppet = no
 						NOT = { has_war_with = POL }
 					}
 				}
@@ -5761,7 +5734,7 @@ focus_tree = {
 				limit = {
 					EST = {
 						is_in_faction = no
-						is_subject = no
+						is_puppet = no
 						NOT = { has_war_with = POL }
 					}
 				}
@@ -7789,7 +7762,7 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 120
 			army_experience = 25
@@ -8691,7 +8664,7 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY_XP}
+		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			army_experience = 50
 			effect_tooltip = {
@@ -10542,11 +10515,10 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		search_filters = { FOCUS_FILTER_ARMY_XP }
+		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
-			army_experience = 50
-			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = { POL_royal_officer_corps }
+			army_experience = 50
 		}
 	}
 
@@ -12270,7 +12242,7 @@ focus_tree = {
 				}
 				random_other_country = {
 					limit = {
-						is_subject_of = ROOT 
+						is_puppet_of = ROOT 
 						original_tag = LIT 
 					}
 					every_character = {
@@ -13283,7 +13255,7 @@ focus_tree = {
 		}
 		
 		available = {
-			is_subject = no
+			is_puppet = no
 			has_army_manpower = { size > 499999 }	
 			OR = {
 				AND = {
@@ -13799,7 +13771,7 @@ focus_tree = {
 			factor = 10
 		}
 		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY_XP }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			army_experience = 75
 			add_manpower = 9700
@@ -16745,14 +16717,14 @@ focus_tree = {
 							}
 						}
 						BUL = {
-							is_subject = yes
+							is_puppet = yes
 						}
 
 					}
 					NOT = { 
 						is_in_faction_with = BUL 
 						BUL = {
-							is_subject = no
+							is_puppet = no
 							NOT = {
 								has_government = democratic
 							}

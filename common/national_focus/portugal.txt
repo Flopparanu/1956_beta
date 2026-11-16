@@ -2110,13 +2110,6 @@ focus_tree = {
 		cost = 20
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
-			add_tech_bonus = {
-				name = FRA_fortification_focus
-				bonus = 1
-				uses = 1
-				category = cat_fortification
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = POR_endless_sea
  			if = {
 				limit = { has_full_control_of_state = 321 }
@@ -3706,8 +3699,19 @@ focus_tree = {
 		available = {
 			has_global_flag = scw_over
 			has_government = communism
-			any_country_of = {
-				target = { BRA MEX COL ARG PRU VEN CHL GUA ECU CUB BOL HAI DOM HON PAR ELS NIC COS PAN URG }
+			any_country = {
+				OR = {
+					TAG = BRA TAG = MEX
+					TAG = COL TAG = ARG
+					TAG = PRU TAG = VEN
+					TAG = CHL TAG = GUA
+					TAG = ECU TAG = CUB
+					TAG = BOL TAG = HAI
+					TAG = DOM TAG = HON
+					TAG = PAR TAG = ELS
+					TAG = NIC TAG = COS
+					TAG = PAN TAG = URG
+				}
 				has_government = communism
 			}
 		}
@@ -4388,8 +4392,8 @@ focus_tree = {
 				has_government = democratic
 				has_government = communism
 			}
-			any_country_with_original_tag = {
-				original_tag_to_check = SPR
+			any_country = {
+				original_tag = SPR
 				NOT = { has_government = ROOT }
 			}
 			has_civil_war = no
@@ -5563,7 +5567,7 @@ focus_tree = {
 
 		available = {
 			is_in_faction = no
-			is_subject = no
+			is_puppet = no
 			has_government = fascism
 			any_other_country = {
 				is_major = yes
@@ -6675,7 +6679,7 @@ focus_tree = {
 		}
 
 		available = {
-			is_subject = no
+			is_puppet = no
 			if = {
 				limit = {
 					BRA = {

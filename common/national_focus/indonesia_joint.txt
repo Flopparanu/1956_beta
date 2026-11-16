@@ -1483,7 +1483,7 @@ joint_focus = {
 	text_icon = INSHOL_INS_focus_style
 
 	available = {
-		original_tag = INS
+		originaL_tag = INS
 		has_army_manpower = { size > 400000 }
 	}
 	prerequisite = { focus = INSHOL_rangers focus = INSHOL_mountaineers }
@@ -2157,25 +2157,7 @@ joint_focus = {
 	icon = GFX_focus_INS_oweralwagen
 	text_icon = INSHOL_INS_HOL_focus_style
 
-	available = {
-		OR = {
-			AND = {
-				original_tag = HOL
-				INS = {
-					is_subject_of = HOL
-				}
-			}
-			AND = {
-				original_tag = INS
-				INS = { 
-					OR = { #R56
-						is_subject_of = HOL
-						has_cosmetic_tag = INS_UNION
-					}
-				}
-			}
-		}
-	}
+	available = { OR = { original_tag = INS original_tag = HOL } INS = { is_subject_of = HOL } }
 	prerequisite = { focus = INSHOL_bangka_production_lines }
 	mutually_exclusive = { focus = INSHOL_increase_funding_for_tix }
 
@@ -4523,10 +4505,7 @@ joint_focus = {
 
 	available = {
 		original_tag = INS
-		OR = { #R56
-			is_subject_of = HOL
-			has_cosmetic_tag = INS_UNION
-		}
+		is_subject_of = HOL
 	}
 	prerequisite = { focus = INSHOL_reform_knil }
 	mutually_exclusive = { }
@@ -4583,10 +4562,7 @@ joint_focus = {
 
 	available = {
 		original_tag = INS
-		OR = { #R56
-			is_subject_of = HOL
-			has_cosmetic_tag = INS_UNION
-		}
+		is_subject_of = HOL
 	}
 	prerequisite = { focus = INSHOL_east_indies_navy }
 	mutually_exclusive = { }
@@ -4724,15 +4700,7 @@ joint_focus = {
 	text_icon = INSHOL_INS_HOL_focus_style
 
 	available = {
-		OR = {
-			AND = {
-				original_tag = HOL
-				INS = {
-					is_subject_of = HOL
-				}
-			}
-			original_tag = INS
-		}
+		OR = { original_tag = INS original_tag = HOL } INS = { is_subject_of = HOL }
 	}
 	prerequisite = { focus = INSHOL_domestic_ship_production }
 	mutually_exclusive = { }
@@ -4835,23 +4803,7 @@ joint_focus = {
 	text_icon = INSHOL_INS_HOL_focus_style
 
 	available = {
-		OR = {
-			AND = {
-				original_tag = HOL
-				INS = {
-					is_subject_of = HOL
-				}
-			}
-			AND = {
-				original_tag = INS
-				INS = { 
-					OR = { #R56
-						is_subject_of = HOL
-						has_cosmetic_tag = INS_UNION
-					}
-				}
-			}
-		}
+		OR = { original_tag = INS original_tag = HOL } INS = { is_subject_of = HOL }
 	}
 	prerequisite = { focus = INSHOL_domestic_ship_production }
 	mutually_exclusive = { }
@@ -4954,23 +4906,7 @@ joint_focus = {
 	text_icon = INSHOL_INS_HOL_focus_style
 
 	available = {
-		OR = {
-			AND = {
-				original_tag = HOL
-				INS = {
-					is_subject_of = HOL
-				}
-			}
-			AND = {
-				original_tag = INS
-				INS = { 
-					OR = { #R56
-						is_subject_of = HOL
-						has_cosmetic_tag = INS_UNION
-					}
-				}
-			}
-		}
+		OR = { original_tag = INS original_tag = HOL } INS = { is_subject_of = HOL }
 	}
 	prerequisite = { focus = INSHOL_domestic_ship_production }
 	mutually_exclusive = { }
@@ -5074,10 +5010,7 @@ joint_focus = {
 
 	available = {
 		original_tag = INS
-		OR = { #R56
-			is_subject_of = HOL
-			has_cosmetic_tag = INS_UNION
-		}
+		is_subject_of = HOL
 	}
 	prerequisite = { focus = INSHOL_destroyers focus = INSHOL_cruisers focus = INSHOL_submarines }
 	mutually_exclusive = { focus = INSHOL_divert_civilian_to_navy }
@@ -5123,12 +5056,8 @@ joint_focus = {
 
 	available = {
 		original_tag = INS
-		OR = { #R56
-			is_subject_of = HOL
-			has_cosmetic_tag = INS_UNION
-		}
+		is_subject_of = HOL
 	}
-
 	prerequisite = { focus = INSHOL_destroyers focus = INSHOL_cruisers focus = INSHOL_submarines }
 	mutually_exclusive = { focus = INSHOL_outsourced_navy }
 
@@ -5266,15 +5195,8 @@ joint_focus = {
 	icon = GFX_focus_SWE_lottakoren
 	text_icon = INSHOL_INS_HOL_focus_style
 	available = {
-		OR = {
-			original_tag = INS
-			original_tag = HOL
-		}
-		INS = { 
-			OR = { #R56
-				is_subject_of = HOL
-				has_cosmetic_tag = INS_UNION
-			}
+		OR = { original_tag = INS original_tag = HOL } INS = { is_subject_of = HOL }
+		INS = {
 			OR = {
 				has_idea = extensive_conscription
 				has_idea = service_by_requirement
@@ -5418,15 +5340,8 @@ joint_focus = {
 	text_icon = INSHOL_INS_HOL_focus_style
 
 	available = {
-		OR = {
-			original_tag = INS
-			original_tag = HOL
-		}
+		OR = { original_tag = INS original_tag = HOL } INS = { is_subject_of = HOL }
 		INS = {
-			OR = { #R56
-				is_subject_of = HOL
-				has_cosmetic_tag = INS_UNION
-			}
 			OR = {
 				has_idea = service_by_requirement
 				has_idea = all_adults_serve
@@ -5544,46 +5459,46 @@ joint_focus = {
 
 			446 = { #East Java
 				create_unit = {
-					division = "name = \"Barisan Bangkalan\" division_template = \"Indigenous Auxiliary Corps\" start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
-					owner = INS
-					allow_spawning_on_enemy_provs = no
-					count = 1
-					id = 1520
-					prioritize_location = 4306 #Bangkalan
-				}
-				create_unit = {
-					division = "name = \"Barisan Sumenep\" division_template = \"Indigenous Auxiliary Corps\" start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
-					owner = INS
-					allow_spawning_on_enemy_provs = no
-					count = 1
-					id = 1520
-					prioritize_location = 13500 #Sumenep
-				}
-			}
-			335 = { #R56 West Java
-				create_unit = {
-					division = "name = \"Barisan Preanger\" division_template = \"Indigenous Auxiliary Corps\" start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
-					owner = INS
-					allow_spawning_on_enemy_provs = no
-					count = 1
-					id = 1520
-					prioritize_location = 7421 #Bandung
-				}
-			}
-			1143 = { #R56 Vorstenlanden
-				create_unit = {
 					division = "name = \"Legion of Mangku Negoro\" division_template = \"Indigenous Auxiliary Corps\" start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
 					owner = INS
 					allow_spawning_on_enemy_provs = no
 					count = 2
 					id = 1520
-					prioritize_location = 10491 #Surakarta
+					prioritize_location = 13350 #Madura
 				}
 				create_unit = {
 					division = "name = \"Legion of Paku Alam\" division_template = \"Indigenous Auxiliary Corps\" start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
 					owner = INS
 					allow_spawning_on_enemy_provs = no
 					count = 2
+					id = 1520
+					prioritize_location = 4306 #Madura
+				}
+				create_unit = {
+					division = "name = \"Barisan Bankalan\" division_template = \"Indigenous Auxiliary Corps\" start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+					owner = INS
+					allow_spawning_on_enemy_provs = no
+					count = 1
+					id = 1520
+					prioritize_location = 4306 #Madura
+				}
+			}
+			976 = { # R56
+				create_unit = {
+					division = "name = \"Barisan Sumenep\" division_template = \"Indigenous Auxiliary Corps\" start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+					owner = INS
+					allow_spawning_on_enemy_provs = no
+					count = 1
+					id = 1520
+					prioritize_location = 13524 #Surakarta # BANABA
+				}
+			}
+			1143 = { #R56
+				create_unit = {
+					division = "name = \"Barisan Pamekasan\" division_template = \"Indigenous Auxiliary Corps\" start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+					owner = INS
+					allow_spawning_on_enemy_provs = no
+					count = 1
 					id = 1520
 					prioritize_location = 10135 #Yogyakarta
 				}
@@ -5598,6 +5513,8 @@ joint_focus = {
 					localization = INSHOL_eastern_conscription
 				}
 			}
+
+			
 		}
 	}
 
@@ -5617,46 +5534,46 @@ joint_focus = {
 
 			446 = { #East Java
 				create_unit = {
-					division = "name = \"Barisan Bangkalan\" division_template = \"Indigenous Auxiliary Corps\" start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
-					owner = INS
-					allow_spawning_on_enemy_provs = no
-					count = 1
-					id = 1520
-					prioritize_location = 4306 #Bangkalan
-				}
-				create_unit = {
-					division = "name = \"Barisan Sumenep\" division_template = \"Indigenous Auxiliary Corps\" start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
-					owner = INS
-					allow_spawning_on_enemy_provs = no
-					count = 1
-					id = 1520
-					prioritize_location = 13500 #Sumenep
-				}
-			}
-			335 = { #R56 West Java
-				create_unit = {
-					division = "name = \"Barisan Preanger\" division_template = \"Indigenous Auxiliary Corps\" start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
-					owner = INS
-					allow_spawning_on_enemy_provs = no
-					count = 1
-					id = 1520
-					prioritize_location = 7421 #Bandung
-				}
-			}
-			1143 = { #R56 Vorstenlanden
-				create_unit = {
 					division = "name = \"Legion of Mangku Negoro\" division_template = \"Indigenous Auxiliary Corps\" start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
 					owner = INS
 					allow_spawning_on_enemy_provs = no
 					count = 2
 					id = 1520
-					prioritize_location = 10491 #Surakarta
+					prioritize_location = 13350 #Madura
 				}
 				create_unit = {
 					division = "name = \"Legion of Paku Alam\" division_template = \"Indigenous Auxiliary Corps\" start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
 					owner = INS
 					allow_spawning_on_enemy_provs = no
 					count = 2
+					id = 1520
+					prioritize_location = 4306 #Madura
+				}
+				create_unit = {
+					division = "name = \"Barisan Bankalan\" division_template = \"Indigenous Auxiliary Corps\" start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+					owner = INS
+					allow_spawning_on_enemy_provs = no
+					count = 1
+					id = 1520
+					prioritize_location = 4306 #Madura
+				}
+			}
+			976 = { # R56
+				create_unit = {
+					division = "name = \"Barisan Sumenep\" division_template = \"Indigenous Auxiliary Corps\" start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+					owner = INS
+					allow_spawning_on_enemy_provs = no
+					count = 1
+					id = 1520
+					prioritize_location = 13524 #Surakarta # BANABA
+				}
+			}
+			1143 = { #R56
+				create_unit = {
+					division = "name = \"Barisan Pamekasan\" division_template = \"Indigenous Auxiliary Corps\" start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+					owner = INS
+					allow_spawning_on_enemy_provs = no
+					count = 1
 					id = 1520
 					prioritize_location = 10135 #Yogyakarta
 				}
@@ -9649,35 +9566,8 @@ joint_focus = {
 					instant_build = yes
 				}
 			}
-			INS = {
-				if = {
-					limit = {
-						has_dlc = "No Compromise, No Surrender"
-						NOT = {
-							any_core_state = {
-								naval_headquarters > 0
-							}
-						}
-					}
-					random_owned_controlled_state = {
-						limit = {
-							impassable = no
-							is_controlled_by = ROOT
-							is_coastal = yes
-						}
-						prioritize = { 446 13520 } #Surabaya
-						add_building_construction = {
-							type = naval_headquarters
-							level = 1
-							instant_build = yes
-							province = {
-								all_provinces = yes
-								limit_to_naval_base = yes
-							}
-						}
-					}
-				}
-			}
+
+			
 		}
 	}
 
@@ -9705,35 +9595,6 @@ joint_focus = {
 					type = dockyard
 					level = 2
 					instant_build = yes
-				}
-			}
-			INS = {
-				if = {
-					limit = {
-						has_dlc = "No Compromise, No Surrender"
-						NOT = {
-							any_core_state = {
-								naval_headquarters > 0
-							}
-						}
-					}
-					random_owned_controlled_state = {
-						limit = {
-							impassable = no
-							is_controlled_by = ROOT
-							is_coastal = yes
-						}
-						prioritize = { 446 13520 } #Surabaya
-						add_building_construction = {
-							type = naval_headquarters
-							level = 1
-							instant_build = yes
-							province = {
-								all_provinces = yes
-								limit_to_naval_base = yes
-							}
-						}
-					}
 				}
 			}
 		}
@@ -10662,7 +10523,7 @@ joint_focus = {
 
 	offset = {
 		trigger = {
-			original_tag = HOL
+			originaL_tag = HOL
 		}
 		y = 0
 	}
@@ -10782,7 +10643,6 @@ joint_focus = {
 
 	available = {
 		original_tag = INS
-		is_subject = no
 	}
 	prerequisite = { focus = INSHOL_begin_negotiations_soetardjo focus = INSHOL_sideline_the_volksraad }
 	mutually_exclusive = { }
@@ -10870,25 +10730,9 @@ joint_focus = {
 			custom_effect_tooltip = INS_will_not_keep_characters_tt
 			custom_effect_tooltip = INSHOL_nationalist_coallition_tt
 
-			set_party_name = {
-				ideology = democratic
-				long_name = INS_democratic_volksraad_party
-				name = INS_democratic_volksraad_party_long
-			}
-			set_party_name = {
-				ideology = neutrality
-				long_name = INS_neutrality_volksraad_gg_party_long
-				name = INS_neutrality_volksraad_gg_party
-			}
-
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_political_advisor
-			if = {
-				limit = {
-					NOT = { has_country_flag = INS_dr_sutomo_passed }
-				}
-				show_ideas_tooltip = INS_dr_sutomo
-			}
+			show_ideas_tooltip = INS_dr_sutomo
 			show_ideas_tooltip = INS_wirantakusumah_v
 			show_ideas_tooltip = INS_achmad_soebardjo
 			show_ideas_tooltip = INS_surachman_tjokoadisurjo
@@ -10909,12 +10753,7 @@ joint_focus = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_political_advisor
-			if = {
-				limit = {
-					NOT = { has_country_flag = INS_dr_sutomo_passed }
-				}
-				show_ideas_tooltip = INS_dr_sutomo
-			}
+			show_ideas_tooltip = INS_dr_sutomo
 			show_ideas_tooltip = INS_wirantakusumah_v
 			show_ideas_tooltip = INS_achmad_soebardjo
 			show_ideas_tooltip = INS_surachman_tjokoadisurjo
@@ -10957,13 +10796,8 @@ joint_focus = {
 		if = {
 			limit = { original_tag = INS }
 			custom_effect_tooltip = INS_will_keep_characters_tt
-			if = {
-				limit = { 
-					NOT = { has_completed_focus = INS_governor_general_tjarda }
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				custom_effect_tooltip = INS_focus_time_reduce_tjarda_tt
-			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = INS_focus_time_reduce_tjarda_tt
 		}
 		else_if = {
 			limit = { original_tag = HOL }
@@ -10975,13 +10809,9 @@ joint_focus = {
 		if = {
 			limit = { original_tag = INS }
 			custom_effect_tooltip = INS_will_keep_characters_tt
-			if = {
-				limit = { 
-					NOT = { has_completed_focus = INS_governor_general_tjarda }
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				custom_effect_tooltip = INS_focus_time_reduce_tjarda_tt
-			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = INS_focus_time_reduce_tjarda_tt
+
 		}
 		else_if = {
 			limit = { original_tag = HOL }
@@ -11102,12 +10932,12 @@ joint_focus = {
 	available = {
 		original_tag = INS
 	}
-	prerequisite = { focus = INSHOL_nationalist_coallition  }
+	prerequisite = { focus = INSHOL_nationalist_coallition }
 	mutually_exclusive = { }
 
 	x = -1
 	y = 1
-	relative_position_id = INSHOL_nationalist_coallition 
+	relative_position_id = INSHOL_nationalist_coallition
 
 	cost = 10
 

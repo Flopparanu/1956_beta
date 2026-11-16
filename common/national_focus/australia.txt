@@ -598,13 +598,13 @@ focus_tree = {
 					uses = 2
 					category = motorized_equipment
 					category = cat_mechanized_equipment
-					category = cat_armored_cars
+					category = armored_cars_tech
 				}
 				add_tech_bonus = {
 					name = AST_R56_dingo_scout_car
 					bonus = 1
 					uses = 1
-					category = cat_armored_cars
+					category = armored_cars_tech
 				}				
 			}
 			else = {

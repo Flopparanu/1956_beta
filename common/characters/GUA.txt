@@ -72,10 +72,7 @@ characters={
 			slot = army_chief
 			idea_token = GUA_jacopo_arbenz_guzman
 			allowed={
-				OR = {
-					original_tag = GUA
-					original_tag = ELS
-				}
+				original_tag = GUA
 			}
 			traits={
 				army_chief_offensive_2

@@ -239,10 +239,10 @@ defined_text = {
 				}
 			}
 		}
-		localization_key = "AFG_royal_navy_force_royal"
+		localization_key = "Royal [AFG.GetAdjective] Navy"
 	}	
 	text = {
-		localization_key = "AFG_navy_force_focus"
+		localization_key = "[AFG.GetAdjective] Navy"
 	}	
 }
 
@@ -496,10 +496,10 @@ defined_text = {
 				}
 			}
 		}
-		localization_key = "AFG_4th_anglo_afghan_war"
+		localization_key = "4th Anglo-Afghan War"
 	}
 	text = {
-		localization_key = "AFG_4th_anglo_afghan_war_fallback"
+		localization_key = "[442.Owner.GetAdjective]-[AFG.GetAdjective] War"
 	}
 }
 

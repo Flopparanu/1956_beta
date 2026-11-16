@@ -360,10 +360,7 @@ characters={
 			slot = political_advisor
 			idea_token = COS_rodrigo_facio_brenes
 			allowed  = {
-				OR = {
-					original_tag  = COS
-					original_tag = ELS
-				}
+				original_tag  = COS
 			}
 			traits  = {
 				liberal_professor 

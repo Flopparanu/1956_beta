@@ -12,8 +12,8 @@ YUG_peasant_uprisings = {
 
 		available = {
 			NOT = {
-				any_country_with_original_tag = {
-					original_tag_to_check = BUL
+				any_country = {
+					original_tag = BUL
 					OR = {
 						has_government = communism
 						has_idea = agitated_peasants
@@ -32,13 +32,13 @@ YUG_peasant_uprisings = {
 					}
 				}
 			}
-			any_country_with_original_tag = {
-				original_tag_to_check = BUL
+			any_country = {
+				original_tag = BUL
 				exists = yes
 			}
 			NOT = {
-				any_country_with_original_tag = {
-					original_tag_to_check = BUL
+				any_country = {
+					original_tag = BUL
 					OR = {
 						has_government = communism
 						has_country_flag = banned_communism_flag
@@ -85,8 +85,8 @@ YUG_peasant_uprisings = {
 
 		available = {
 			NOT = {
-				any_country_with_original_tag = {
-					original_tag_to_check = ALB
+				any_country = {
+					original_tag = ALB
 					OR = {
 						has_government = communism
 						has_idea = agitated_peasants
@@ -105,13 +105,13 @@ YUG_peasant_uprisings = {
 					}
 				}
 			}
-			any_country_with_original_tag = {
-				original_tag_to_check = ALB
+			any_country = {
+				original_tag = ALB
 				exists = yes
 			}
 			NOT = {
-				any_country_with_original_tag = {
-					original_tag_to_check = ALB
+				any_country = {
+					original_tag = ALB
 					OR = {
 						has_government = communism
 						has_country_flag = banned_communism_flag
@@ -158,8 +158,8 @@ YUG_peasant_uprisings = {
 
 		available = {
 			NOT = {
-				any_country_with_original_tag = {
-					original_tag_to_check = GRE
+				any_country = {
+					original_tag = GRE
 					OR = {
 						has_government = communism
 						has_idea = agitated_peasants
@@ -178,13 +178,13 @@ YUG_peasant_uprisings = {
 					}
 				}
 			}
-			any_country_with_original_tag = {
-				original_tag_to_check = GRE
+			any_country = {
+				original_tag = GRE
 				exists = yes
 			}
 			NOT = {
-				any_country_with_original_tag = {
-					original_tag_to_check = GRE
+				any_country = {
+					original_tag = GRE
 					OR = {
 						has_government = communism
 						has_country_flag = banned_communism_flag
@@ -232,8 +232,8 @@ YUG_peasant_uprisings = {
 
 		available = {
 			NOT = {
-				any_country_with_original_tag = {
-					original_tag_to_check = ROM
+				any_country = {
+					original_tag = ROM
 					OR = {
 						has_government = communism
 						has_idea = agitated_peasants
@@ -252,13 +252,13 @@ YUG_peasant_uprisings = {
 					}
 				}
 			}
-			any_country_with_original_tag = {
-				original_tag_to_check = ROM
+			any_country = {
+				original_tag = ROM
 				exists = yes
 			}
 			NOT = {
-				any_country_with_original_tag = {
-					original_tag_to_check = ROM
+				any_country = {
+					original_tag = ROM
 					OR = {
 						has_government = communism
 						has_country_flag = banned_communism_flag
@@ -306,8 +306,8 @@ YUG_peasant_uprisings = {
 
 		available = {
 			NOT = {
-				any_country_with_original_tag = {
-					original_tag_to_check = HUN
+				any_country = {
+					original_tag = HUN
 					OR = {
 						has_government = communism
 						has_idea = agitated_peasants
@@ -326,13 +326,13 @@ YUG_peasant_uprisings = {
 					}
 				}
 			}
-			any_country_with_original_tag = {
-				original_tag_to_check = HUN
+			any_country = {
+				original_tag = HUN
 				exists = yes
 			}
 			NOT = {
-				any_country_with_original_tag = {
-					original_tag_to_check = HUN
+				any_country = {
+					original_tag = HUN
 					OR = {
 						has_government = communism
 						has_country_flag = banned_communism_flag
@@ -383,8 +383,8 @@ YUG_peasant_uprisings = {
 			has_completed_focus = YUG_invite_hungary
 			has_completed_focus = YUG_invite_romania
 			NOT = {
-				any_country_with_original_tag = {
-					original_tag_to_check = TUR
+				any_country = {
+					original_tag = TUR
 					OR = {
 						has_government = communism
 						has_idea = agitated_peasants
@@ -403,13 +403,13 @@ YUG_peasant_uprisings = {
 					}
 				}
 			}
-			any_country_with_original_tag = {
-				original_tag_to_check = TUR
+			any_country = {
+				original_tag = TUR
 				exists = yes
 			}
 			NOT = {
-				any_country_with_original_tag = {
-					original_tag_to_check = TUR
+				any_country = {
+					original_tag = TUR
 					OR = {
 						has_government = communism
 						has_country_flag = banned_communism_flag
@@ -1552,7 +1552,8 @@ special_projects = {
 					controls_state = 102
 					controls_state = 103
 				}
-				any_subject_country = {
+				any_country = {
+					is_subject_of = YUG
 					controls_state = 102
 					controls_state = 103
 				}
@@ -1565,7 +1566,8 @@ special_projects = {
 			OR = {
 				controls_state = 102
 				controls_state = 103
-				any_subject_country = {
+				any_country = {
+					is_subject_of = YUG
 					controls_state = 102
 					controls_state = 103
 				}

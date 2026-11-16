@@ -550,15 +550,7 @@ focus_tree = {
 					instant_build = yes
 				}	
 			}
-			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = GEN_Anti_Invasion_I
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_tech_bonus = {
-				name = FRA_fortification_focus
-				bonus = 1
-				uses = 1
-				category = cat_fortification
-			}
 		}
 		ai_will_do = {
 			factor = 2.5
@@ -1440,7 +1432,7 @@ focus_tree = {
 			focus = URG_expand_the_montevideo_treaty
 		}
 		available = {
-			is_subject = no
+			is_puppet = no
 			is_in_faction = no
 			any_other_country = {
 				is_major = yes
@@ -2683,7 +2675,7 @@ focus_tree = {
 		}
 		available = {
 			is_in_faction = no
-			is_subject = no
+			is_puppet = no
 			any_other_country = {
 				is_major = yes
 				has_government = fascism

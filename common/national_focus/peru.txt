@@ -4112,7 +4112,8 @@ focus = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 
 		available = {
-			any_subject_country = {
+			any_country = {
+				is_subject_of = ROOT
 				OR = {
 					tag = GAR
 					tag = INC
@@ -4550,7 +4551,8 @@ focus = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 
 		available = {
-			any_subject_country = {
+			any_country = {
+				is_subject_of = ROOT
 				OR = {
 					tag = GAR
 					tag = INC
@@ -4660,7 +4662,8 @@ focus = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 
 		available = {
-			any_subject_country = {
+			any_country = {
+				is_subject_of = ROOT
 				OR = {
 					tag = GAR
 					tag = INC
@@ -6256,9 +6259,9 @@ focus = {
 	}
 
 	available = {
-		any_country_with_original_tag = {
-			original_tag_to_check = BOL
-			is_in_faction_with = ROOT
+		any_country = {
+			original_tag = BOL
+		is_in_faction_with = ROOT
 		}
 	}
 
@@ -6301,8 +6304,8 @@ focus = {
 	}
 
 	available = {
-		any_country_with_original_tag = {
-			original_tag_to_check = BOL
+		any_country = {
+			original_tag = BOL
 			is_in_faction_with = ROOT
 			has_opinion = {
 				target = ROOT

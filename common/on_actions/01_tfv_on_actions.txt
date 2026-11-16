@@ -158,8 +158,10 @@ on_actions = {
 			}
 			if = {
 				limit = {
-					tag = CZE
-					SLO = { exists = yes }
+					AND = {
+						TAG = CZE
+						SLO = { exists = yes }
+					}
 					NOT = {
 						AND = {
 							OR = {
@@ -260,8 +262,10 @@ on_actions = {
 			}
 			if = {
 				limit = {
-					tag = CZE
-					SLO = { exists = yes }
+					AND = {
+						TAG = CZE
+						SLO = { exists = yes }
+					}
 					NOT = {
 						AND = {
 							OR = {
@@ -334,8 +338,10 @@ on_actions = {
 			}
 			if = {
 				limit = {
-					tag = CZE
-					SLO = { exists = yes }
+					AND = {
+						TAG = CZE
+						SLO = { exists = yes }
+					}
 					NOT = {
 						AND = {
 							OR = {

@@ -5657,7 +5657,7 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {
-			base = 50
+			base = 10
 		}
 		
 		available = {
@@ -5682,7 +5682,7 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {
-			base = 50
+			base = 10
 		}
 		
 		available = {

@@ -197,10 +197,8 @@ political_actions = {
 
 		visible = { has_completed_focus = GER_the_revolution_secured}
 		cancel_trigger = {
-			OR = {
-				NOT = { has_government = communism}
-				num_of_civilian_factories > 80
-			}
+			NOT = { has_government = communism}
+			num_of_civilian_factories > 80
 
 		}
 		complete_effect = {
@@ -258,10 +256,8 @@ political_actions = {
 
 		visible = {has_country_flag = GER_commie_eco_1 has_completed_focus = GER_the_revolution_secured}
 		cancel_trigger = {
-			OR = {
-				NOT = { has_government = communism}
-				num_of_military_factories > 100
-			}
+			NOT = { has_government = communism}
+			num_of_military_factories > 100
 
 		}
 		available = { NOT = { has_decision = GER_restore_prosperity_for_german_workers }}
@@ -320,11 +316,9 @@ political_actions = {
 
 		visible = {has_country_flag = GER_commie_eco_2 has_completed_focus = GER_the_revolution_secured}
 		cancel_trigger = {
-			OR = {
-				NOT = { has_government = communism}
-				has_army_manpower = {
-					size > 10000000
-				}
+			NOT = { has_government = communism}
+			has_army_manpower = {
+				size > 10000000
 			}
 
 		}
@@ -2117,11 +2111,7 @@ GER_projected_results = {
 				compare = greater_than
 			}
 			has_completed_focus = GER_campaign_as_a_popular_front
-			check_variable = {
-				var = KPD_seats_f
-				value = 0
-				compare = greater_than
-			}
+			NOT = { has_completed_focus = GER_fight_the_apo }
 		}
 		available = {
 		}
@@ -5658,7 +5648,7 @@ GER_election_reults = {
 			}
 			has_completed_focus = GER_dnvp_in_coalition
 			NOT = {
-				OR = {
+				AND = {
 					
 					AND = {
 						has_completed_focus = GER_restore_the_old_estates
@@ -5747,9 +5737,21 @@ GER_election_reults = {
 			has_completed_focus = GER_dvu_in_coalition
 			NOT = {
 				AND = {
-					has_completed_focus = GER_bring_back_einstein
-					has_completed_focus = GER_national_economic_coordination
+							
+					OR = {
+						AND = {
+							has_completed_focus = GER_restore_the_old_estates
+							has_completed_focus = GER_engrain_antiurbanism
+							has_completed_focus = GER_the_spirit_of_blut_and_boden
+						}
+						AND = {
+							has_completed_focus = GER_bring_back_einstein
+							has_completed_focus = GER_national_economic_coordination
+						}
+					}
+					has_completed_focus = GER_the_legacy_of_the_sozialistengesetze
 					has_completed_focus = GER_readdress_the_kaiserfrage
+					has_completed_focus = GER_highten_nationalist_rethoric
 					OR = {
 						has_completed_focus = GER_restore_the_state_churches
 						has_completed_focus = GER_positive_christianty
@@ -5759,6 +5761,10 @@ GER_election_reults = {
 					has_completed_focus = GER_apply_the_reichskonkordat_to_the_republic
 					OR = {
 						has_completed_focus = GER_corporatism_with_catholic_characteristics
+						AND = {
+							has_completed_focus = GER_combat_the_reactionary
+							has_completed_focus = GER_technocracy_with_strong_limits
+						}
 						AND = {
 							has_completed_focus = GER_increase_municipal_autonomy
 							has_completed_focus = GER_federalism_a_hedge_against_radicalism
@@ -5775,9 +5781,20 @@ GER_election_reults = {
 		}
 
 		available = {
-			has_completed_focus = GER_bring_back_einstein
-			has_completed_focus = GER_national_economic_coordination
+			OR = {
+				AND = {
+					has_completed_focus = GER_restore_the_old_estates
+					has_completed_focus = GER_engrain_antiurbanism
+					has_completed_focus = GER_the_spirit_of_blut_and_boden
+				}
+				AND = {
+					has_completed_focus = GER_bring_back_einstein
+					has_completed_focus = GER_national_economic_coordination
+				}
+			}
+			has_completed_focus = GER_the_legacy_of_the_sozialistengesetze
 			has_completed_focus = GER_readdress_the_kaiserfrage
+			has_completed_focus = GER_highten_nationalist_rethoric
 			OR = {
 				has_completed_focus = GER_restore_the_state_churches
 				has_completed_focus = GER_positive_christianty
@@ -5787,6 +5804,10 @@ GER_election_reults = {
 			has_completed_focus = GER_apply_the_reichskonkordat_to_the_republic
 			OR = {
 				has_completed_focus = GER_corporatism_with_catholic_characteristics
+				AND = {
+					has_completed_focus = GER_combat_the_reactionary
+					has_completed_focus = GER_technocracy_with_strong_limits
+				}
 				AND = {
 					has_completed_focus = GER_increase_municipal_autonomy
 					has_completed_focus = GER_federalism_a_hedge_against_radicalism
@@ -6504,7 +6525,6 @@ GER_election_reults = {
 			r56_ger_nraf_35 = yes
 			r56_ger_dnvp_35 = yes
 			r56_ger_dvu_35 = yes
-			mark_focus_tree_layout_dirty = yes
 		}
 
 		ai_will_do = {
@@ -9586,7 +9606,6 @@ GER_state_of_the_union = {
 				value = 0
 				compare = less_than_or_equals
 			}
-			NOT = { has_completed_focus = GER_hugenburgs_legacy }
 		}
 		allowed = {
 			tag = GER
@@ -9603,14 +9622,9 @@ GER_state_of_the_union = {
 			}
 		}
 		cancel_trigger = {
-			IF = {
-				limit = { has_completed_focus = GER_hugenburgs_legacy}
-				has_completed_focus = GER_hugenburgs_legacy
-			}
-			else = { NOT = { has_country_flag = GER_dvu_formed} }
-			
+			NOT = { has_country_flag = GER_dvu_formed}
 		}
-		days_mission_timeout = 35
+		days_mission_timeout = 10
 
 		is_good = no
 
@@ -11842,7 +11856,7 @@ GER_abwehr_cat = {
 		modifier = {
 		}
 		remove_effect = {
-			remove_ideas = GER_becks_lingering_opposition_2
+			remove_ideas = GER_democratic_opposition_2
 			retire_character = GER_ludwig_beck
 		}
 		ai_will_do = {
@@ -13026,7 +13040,6 @@ GER_r56_weltpolitik_cat = {
 		fire_only_once = yes
 		days_remove = 10
 		visible = {
-			is_subject = no
 			has_completed_focus = GER_approach_the_anglosphere
 			NOT = {
 				has_war_with = USA
@@ -13210,7 +13223,6 @@ GER_r56_weltpolitik_cat = {
 		fire_only_once = yes
 		days_remove = 10
 		visible = {
-			is_subject = no
 			has_completed_focus = GER_approach_the_anglosphere
 		}
 
@@ -13263,7 +13275,6 @@ GER_r56_weltpolitik_cat = {
 		fire_only_once = yes
 		days_remove = 10
 		visible = {
-			is_subject = no
 			has_completed_focus = GER_approach_the_anglosphere
 			SAF = {
 				NOT = {
@@ -13333,7 +13344,6 @@ GER_r56_weltpolitik_cat = {
 		fire_only_once = yes
 		days_remove = 5
 		visible = {
-			is_subject = no
 			has_completed_focus = GER_approach_the_anglosphere
 			NOT = { has_country_flag = GER_no_cooperation_with_afrikaners_flag }
 		}
@@ -13371,7 +13381,6 @@ GER_r56_weltpolitik_cat = {
 		fire_only_once = yes
 		days_remove = 10
 		visible = {
-			is_subject = no
 			119 = {
 				OR = {
 					owner = {
@@ -13501,16 +13510,6 @@ GER_r56_weltpolitik_cat = {
 				is_ally_with = IRE
 				IRE = { is_subject = yes }
 			}
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 		}
 
 		available = {
@@ -13607,7 +13606,6 @@ GER_r56_weltpolitik_cat = {
 		visible = {
 			has_completed_focus = GER_approach_the_anglosphere
 			CAN = { is_subject = no }
-			is_subject = no
 		}
 
 		available = {
@@ -13957,8 +13955,8 @@ GER_r56_weltpolitik_cat = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = intervene_soviet_civil_war_tt		
-				any_country_with_original_tag = {
-					original_tag_to_check = SOV
+				any_country = {
+					original_tag = SOV
 					NOT = {
 						tag = SOV
 					}
@@ -14030,7 +14028,6 @@ GER_r56_weltpolitik_cat = {
 		visible = {
 			NOT = { has_war_with = SOV }
 			has_completed_focus = GER_an_outstreched_arm_towards_the_east
-			is_subject = no
 		}
 
 		available = {
@@ -14106,16 +14103,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			SLO = {
 				OR = {
 					exists = no
@@ -14673,16 +14660,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			is_ally_with = YUG
 		}
 		cost = 25
@@ -15409,16 +15386,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			any_controlled_state = {
 				any_neighbor_state = {
 					state = 39
@@ -15485,16 +15452,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			any_controlled_state = {
 				any_neighbor_state = {
 					state = 39
@@ -15560,16 +15517,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			any_controlled_state = {
 				any_neighbor_state = {
 					state = 39
@@ -15725,16 +15672,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			28 = {
 				controller = {
 					NOT = {
@@ -15810,16 +15747,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			has_completed_focus = GER_rekindle_the_franco_german_rivalry
 			has_war_with = FRA
 			IF = {
@@ -15929,10 +15856,7 @@ GER_r56_weltpolitik_cat = {
 			OR = {
 				has_government = fascism
 				AND = {
-					OR = {
-						has_completed_focus = GER_dnvp_in_coalition
-						has_completed_focus = GER_dvu_in_coalition
-					}
+					has_completed_focus = GER_dnvp_in_coalition
 					has_elections = no
 					has_government = neutrality
 				}
@@ -15940,16 +15864,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			965 = {
 				controller = {
 					NOT = {
@@ -16024,16 +15938,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			965 = {
 				any_neighbor_state = {
 					is_controlled_by = ROOT
@@ -16095,16 +15999,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			965 = {
 				any_neighbor_state = {
 					is_controlled_by = ROOT
@@ -16180,10 +16074,7 @@ GER_r56_weltpolitik_cat = {
 			OR = {
 				has_government = fascism
 				AND = {
-					OR = {
-						has_completed_focus = GER_dnvp_in_coalition
-						has_completed_focus = GER_dvu_in_coalition
-					}
+					has_completed_focus = GER_dnvp_in_coalition
 					has_elections = no
 					has_government = neutrality
 				}
@@ -16191,16 +16082,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			188 = {
 				controller = {
 					NOT = {
@@ -16274,16 +16155,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			188 = {
 				any_neighbor_state = {
 					is_controlled_by = ROOT
@@ -16345,16 +16216,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			188 = {
 				any_neighbor_state = {
 					is_controlled_by = ROOT
@@ -16458,10 +16319,7 @@ GER_r56_weltpolitik_cat = {
 			OR = {
 				has_government = fascism
 				AND = {
-					OR = {
-						has_completed_focus = GER_dnvp_in_coalition
-						has_completed_focus = GER_dvu_in_coalition
-					}
+					has_completed_focus = GER_dnvp_in_coalition
 					has_elections = no
 					has_government = neutrality
 				}
@@ -16469,16 +16327,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			OR = {
 				69 = { 
 					NOT = {
@@ -16769,16 +16617,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			69 = {
 				any_neighbor_state = {
 					is_controlled_by = ROOT
@@ -16845,16 +16683,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			69 = {
 				any_neighbor_state = {
 					is_controlled_by = ROOT
@@ -16956,16 +16784,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			NOT = { has_government = fascism }
 			69 = {
 				any_neighbor_state = {
@@ -17054,16 +16872,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			964 = {
 				controller = {
 					NOT = {
@@ -17092,11 +16900,8 @@ GER_r56_weltpolitik_cat = {
 					NOT = { has_government = fascism}
 				}
 				has_government = fascism
-				AND = {
-					OR = {
-						has_completed_focus = GER_dnvp_in_coalition
-						has_completed_focus = GER_dvu_in_coalition
-					}
+				AND = { 
+					has_completed_focus = GER_dnvp_in_coalition
 					has_elections = no
 					has_government = neutrality
 				}
@@ -17165,16 +16970,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			NOT = { has_country_flag = GER_poland_active }
 		}
 
@@ -17334,16 +17129,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			POL = { NOT = { has_government = SOV }}
 			POL = { NOT = { is_ally_with = SOV }}
 			NOT = { has_country_flag = GER_poland_active}
@@ -17423,28 +17208,17 @@ GER_r56_weltpolitik_cat = {
 					NOT = { has_government = fascism}
 				}
 				has_government = fascism
-				AND = {
+				AND = { 
 					OR = {
 						has_completed_focus = GER_dnvp_in_coalition
-						has_completed_focus = GER_dvu_in_coalition
+						has_elections = no
 					}
-					has_elections = no
 					has_government = neutrality
 				}
 			}
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			NOT = { has_country_flag = GER_poland_active }
 		}
 
@@ -17497,28 +17271,17 @@ GER_r56_weltpolitik_cat = {
 			OR = {
 				NOT = { has_government = POL}
 				has_government = fascism
-				AND = {
+				AND = { 
 					OR = {
 						has_completed_focus = GER_dnvp_in_coalition
-						has_completed_focus = GER_dvu_in_coalition
+						has_elections = no
 					}
-					has_elections = no
 					has_government = neutrality
 				}
 			}
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			NOT = { has_country_flag = GER_poland_active }
 			has_government = SOV
 			NOT = { has_government = democratic }
@@ -17799,28 +17562,17 @@ GER_r56_weltpolitik_cat = {
 				}
 				has_country_flag = GER_austria_rejected
 				has_government = fascism
-				AND = {
+				AND = { 
 					OR = {
 						has_completed_focus = GER_dnvp_in_coalition
-						has_completed_focus = GER_dvu_in_coalition
+						has_elections = no
 					}
-					has_elections = no
 					has_government = neutrality
 				}
 			}
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			can_declare_war_on = AUS
 			is_neighbor_of = AUS
 			NOT = { has_non_aggression_pact_with = AUS }
@@ -17900,16 +17652,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			AUS = { is_subject = no }
 			NOT = {
 				any_country = {
@@ -19270,12 +19012,11 @@ GER_r56_weltpolitik_cat = {
 					NOT = { has_government = fascism}
 				}
 				has_government = fascism
-				AND = {
+				AND = { 
 					OR = {
 						has_completed_focus = GER_dnvp_in_coalition
-						has_completed_focus = GER_dvu_in_coalition
+						has_elections = no
 					}
-					has_elections = no
 					has_government = neutrality
 				}
 			}
@@ -19294,16 +19035,6 @@ GER_r56_weltpolitik_cat = {
 			}
 		}
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			can_declare_war_on = FROM
 			NOT = { has_non_aggression_pact_with = FROM }
 			NOT = { has_country_flag = GER_colony_active }
@@ -19666,16 +19397,6 @@ GER_r56_weltpolitik_cat = {
 			}
 		}
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			NOT = { has_non_aggression_pact_with = SOV }
 		}
 		target_root_trigger = {
@@ -19697,7 +19418,6 @@ GER_r56_weltpolitik_cat = {
 
 		target_trigger = {
 			FROM = {
-				has_civil_war = no
 				NOT = { has_country_flag = FROM_demanded_puppet }
 				NOT = { original_tag = SOV }
 				NOT = { original_tag = AUS }
@@ -19863,12 +19583,11 @@ GER_r56_weltpolitik_cat = {
 					NOT = { has_government = fascism}
 				}
 				has_government = fascism
-				AND = {
+				AND = { 
 					OR = {
 						has_completed_focus = GER_dnvp_in_coalition
-						has_completed_focus = GER_dvu_in_coalition
+						has_elections = no
 					}
-					has_elections = no
 					has_government = neutrality
 				}
 			}
@@ -20267,16 +19986,6 @@ GER_r56_weltpolitik_cat = {
 		}
 		war_with_on_remove = JAP
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			JAP = { has_country_flag = No_sell_colonies_to_ger }
 			CHI = { NOT = { has_war_with = JAP}}
 			CHI = { NOT = { has_non_aggression_pact_with = JAP }}
@@ -20754,16 +20463,6 @@ GER_r56_weltpolitik_cat = {
 		}
 
 		available = {
-			IF = {
-				limit = {
-					has_completed_focus = GER_a_greater_appeal_to_moscow
-					is_subject_of = SOV
-				}
-				is_subject_of = SOV
-			}
-			ELSE = {
-				is_subject = no
-			}
 			IF = {
 				limit = { has_country_flag = GER_befriended_japan}
 				IF = {

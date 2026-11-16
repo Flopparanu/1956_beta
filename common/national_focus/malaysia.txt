@@ -1892,9 +1892,7 @@ focus_tree = {
 			336 = {
 				add_province_modifier = {
 					static_modifiers = { flooded }
-					province = {
-						id = 12299
-					}
+					province = 12299
 				}
 				damage_building = {
 					type = infrastructure

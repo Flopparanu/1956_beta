@@ -551,10 +551,7 @@ characters={
 			slot = political_advisor
 			idea_token = HON_julio_lozano_diaz
 				allowed = {
-					OR = {
-						original_tag = HON
-						original_tag = ELS
-					}
+					original_tag = HON
 				}
 				traits  = {
 					captain_of_industry

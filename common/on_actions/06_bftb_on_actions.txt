@@ -1411,12 +1411,14 @@ on_actions = {
 						character = BUL_ferdinand_i
 						ruling_only = yes
 					}
-					any_subject_country = {
+					any_country = {
+						is_subject_of = ROOT
 						NOT = { has_idea = BUL_ferdinands_puppet }
 					}
 				}
-				every_subject_country = {
+				every_country = {
 					limit = {
+						is_subject_of = ROOT
 						NOT = { has_idea = BUL_ferdinands_puppet }
 					}
 					add_ideas = BUL_ferdinands_puppet

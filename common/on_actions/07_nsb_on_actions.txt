@@ -595,6 +595,12 @@ on_actions = {
 							target = PREV
 							transfer_troops = yes
 						}
+						if = {
+							limit = {
+								NOT = { has_cosmetic_tag = BAL_UNIFIED }
+								NOT = { has_cosmetic_tag = PLC_UNIFIED }
+							}
+						}
 					}
 				}
 				else = {
@@ -882,7 +888,6 @@ on_actions = {
 				if = {
 					limit = { #Kerensky comes back from exile if Democratic
 						has_government = democratic
-						has_character = SOV_aleksandr_kerensky
 						SOV_aleksandr_kerensky = {
 							has_character_flag = SOV_exiled_flag
 						}

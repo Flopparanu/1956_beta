@@ -2042,7 +2042,10 @@ shared_focus = {
 	cost = 5
 
 	available = {
-		any_other_country = {
+		any_country = {
+			NOT = {
+				tag = ROOT
+			}
 			has_completed_focus = SMB_establish_aircraft_industry
 		}
 	}
